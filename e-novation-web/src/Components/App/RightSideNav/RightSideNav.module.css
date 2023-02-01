@@ -1,0 +1,9 @@
+:root {
+  --height: 100vh;
+}
+.rightNav {
+  float: left;
+  width: 8%;
+  min-height: calc(90.5vh);
+  background-color: var(--secondary);
+}
