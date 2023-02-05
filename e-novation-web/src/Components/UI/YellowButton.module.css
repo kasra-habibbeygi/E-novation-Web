@@ -1,0 +1,6 @@
+.yellowButton {
+  width: 80%;
+  text-align: center;
+  background-color: var(--secondary);
+  color: var(--baseWhite);
+}

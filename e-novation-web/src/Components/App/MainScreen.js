@@ -1,8 +1,8 @@
-import RightSideNav from "./RightSideNav/RightSideNav";
 import Shower from "./Shower/Shower";
-import TopSideNav from "./TopSideNav/TopSideNav";
+import MainNav from "./MainNav/MainNav";
 import Profile from "./Profile/Profile";
 import classes from "./MainScreen.module.css";
+import TitleNav from "./TitleSideNav/TitleNav";
 
 export default function MainScreen() {
   return (
@@ -13,8 +13,8 @@ export default function MainScreen() {
         <img src="images/logo.png" className={classes.mainLogo} />
       </div>
 
-      <RightSideNav />
-      <TopSideNav />
+      <MainNav />
+      <TitleNav />
       <Shower />
     </div>
   );

@@ -7,7 +7,11 @@ import { Global } from "./constants/Global";
 import MainScreen from "./Components/App/MainScreen";
 
 function App() {
+  // const [authRef, setAuthRef] = useState(false);
+
+  // for test
   const [authRef, setAuthRef] = useState(false);
+
   useEffect(() => {
     const cash = localStorage.getItem("user");
     if (cash !== null) {

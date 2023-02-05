@@ -5,6 +5,8 @@
   --darkGray: #575757;
   --baseWhite: white;
   --warning: rgb(137, 0, 0);
+  --lightYellow: #f0d774;
+  --lightShadow: #c6c6c6;
 }
 
 body {
@@ -22,6 +24,8 @@ code {
 * {
   box-sizing: border-box;
   font-size: 18px;
+  margin: 0;
+  padding: 0;
 }
 @media only screen and (max-width: 1400px) {
   * {
