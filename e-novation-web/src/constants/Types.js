@@ -5,6 +5,9 @@ export const URLS = {
   Authentication: "USER/login/",
   ProfileImage: "media/",
   Jobs: "USER/opproject/",
+
+  alternativeImageURL:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTU2fQ_VCPdrSaseCDEo_dTbhRo7_Kuoz5zQ&usqp=CAU",
 };
 
 export const stateOfRequest = {
