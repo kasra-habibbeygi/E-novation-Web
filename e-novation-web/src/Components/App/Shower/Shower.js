@@ -83,5 +83,5 @@ export default function Shower() {
     };
     fetchJobs();
   }, []);
-  return <JobCards details={jobDetails} />;
+  return <Invertors />;
 }

@@ -1,7 +1,27 @@
 .container {
-  width: 40%;
+  width: 48%;
   display: flex;
+  box-shadow: 0px 5px 5px var(--lightShadow);
+  padding: 1vw;
+  margin-right: auto;
+  margin-top: 10px;
 }
 .dataBox {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: 2px var(--secondary) solid;
+  margin: 10px 1vw;
+  padding: 0 1vw;
+}
+.invertor {
+  margin-top: 10px;
+  font-size: ;
+}
+.dataTitle {
+  color: var(--primary);
+  font-size: 0.75rem;
+}
+.data {
+  color: var(--darkGray);
+  font-size: 0.65rem;
 }
