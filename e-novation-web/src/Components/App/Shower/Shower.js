@@ -45,11 +45,10 @@ const testArray3 = [
 ];
 
 export const JobCards = ({ details }) => {
-  console.log(details);
   return (
     <div className={classes.showerContainer}>
       {details?.map((item) => {
-        return <JobCard title={item.name} alarm={item.alarm} />;
+        return <JobCard title={item.name} alarm={item.alarm} key={item.id} />;
       })}
     </div>
   );
@@ -78,13 +77,11 @@ export const Invertors = () => {
 export default function Shower() {
   const [jobDetails, setJobDetails] = useState(null);
   useEffect(() => {
-    console.log("api is calling");
     let fetchJobs = async () => {
       let response = await JobAPI.getJobs(Global.user.token);
       setJobDetails(await response);
     };
     fetchJobs();
   }, []);
-  console.log(jobDetails);
   return <JobCards details={jobDetails} />;
 }

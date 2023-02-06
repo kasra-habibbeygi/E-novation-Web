@@ -26,7 +26,12 @@ export default function TitleNav() {
               dynamicClass = classes.title2;
           }
           return (
-            <a className={`${classes.title} ${dynamicClass}`}>{item.title}</a>
+            <a
+              className={`${classes.title} ${dynamicClass}`}
+              key={`${index}${item.title}`}
+            >
+              {item.title}
+            </a>
           );
         })}
       </div>

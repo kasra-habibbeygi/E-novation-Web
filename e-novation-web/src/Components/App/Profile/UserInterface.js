@@ -5,7 +5,7 @@ import classes from "./UserInterface.module.css";
 
 export default function () {
   //   AuthAPI.Login({ email: "gmc@test.com", pass: "Gmc6000" });
-  console.log(Global?.user?.img);
+  // console.log(Global?.user?.img);
   return (
     <div className={classes.interfaceContainer}>
       {/* <img src={`${URLS.BaseURL}${URLS.ProfileImage}${Global.user.img}`}></img> */}

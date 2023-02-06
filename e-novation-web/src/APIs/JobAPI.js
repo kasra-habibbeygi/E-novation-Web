@@ -3,7 +3,6 @@ import { URLS } from "../constants/Types";
 
 export default class JobAPI {
   static getJobs(token) {
-    console.log(token);
     let jobs = async (token) => {
       let response = await axios
         .get(`${URLS.BaseURL}${URLS.Jobs}`, {
@@ -12,7 +11,7 @@ export default class JobAPI {
         })
         .catch((er) => console.log(er));
       if (response?.status == 200) {
-        return response.data.data;
+        return response.data;
       } else {
         console.log("error happened in jobs api call");
       }
