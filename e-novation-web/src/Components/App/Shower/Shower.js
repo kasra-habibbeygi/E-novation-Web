@@ -3,6 +3,9 @@ import JobAPI from "../../../APIs/JobAPI";
 import { Global } from "../../../constants/Global";
 import InvertorCard from "../../UI/InvertorCard";
 import JobCard from "../../UI/JobCard";
+import ProgressCard from "../../UI/ProgressCard";
+import StaticScroll from "../../UI/StaticScroll";
+
 import classes from "./Shower.module.css";
 const testArray = [
   { title: "Victoria Car Platform" },
@@ -64,12 +67,62 @@ export const JobDocs = () => {
   );
 };
 
+const progressTest = [
+  { title: "bla bla bla", state: 1 },
+  { title: "bla bla bla", state: 2 },
+  { title: "bla bla bla", state: 3 },
+  { title: "bla bla bla", state: 3 },
+  { title: "bla bla bla", state: 3 },
+  { title: "bla bla bla", state: 3 },
+  { title: "bla bla bla", state: 3 },
+  { title: "bla bla bla", state: 3 },
+  { title: "bla bla bla", state: 3 },
+];
+const infoTest = [
+  { title: "some dummy text" },
+  { title: "some dummy text" },
+  { title: "some dummy text" },
+  { title: "some dummy text" },
+];
+
 export const Invertors = () => {
   return (
     <div className={classes.showerContainer}>
       {testArray.map(() => {
         return <InvertorCard />;
       })}
+    </div>
+  );
+};
+
+export const JobProgress = () => {
+  let totalState = 0;
+  for (let i = 0; i < progressTest.length; i++) {
+    if (progressTest[i].state !== 3) {
+      totalState++;
+    } else {
+      break;
+    }
+  }
+  return (
+    <div className={classes.showerContainer}>
+      <div className={classes.progressLeftSideContainer}>
+        <StaticScroll
+          fillAmount={totalState}
+          totalAmount={progressTest.length}
+        />
+        <div className={classes.progressCardContainer}>
+          {progressTest.map((item, index) => {
+            return <ProgressCard title={item.title} state={item.state} />;
+          })}
+        </div>
+      </div>
+      <div className={classes.progressRightSideContainer}>
+        <p className={classes.progressInfoTitle}>Project info</p>
+        {infoTest.map((item, index) => {
+          return <p className={classes.progressInfoes}>{item.title}</p>;
+        })}
+      </div>
     </div>
   );
 };
@@ -83,5 +136,5 @@ export default function Shower() {
     };
     fetchJobs();
   }, []);
-  return <Invertors />;
+  return <JobProgress />;
 }
