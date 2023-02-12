@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+<!-- folder structure -->
+<!-- public -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This part is used for photos and heavy files. It is not loaded into the git.
 
-## Available Scripts
+<!-- sources -->
 
-In the project directory, you can run:
+All code sources are placed here
 
-### `npm start`
+<!-- APIs -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+All APIs are extracted from the components in a usable form and placed in this folder.
+Inside this folder, there is a reference API under the title of bridge, which is used for extracting the similar part of APIs.
+APs are placed inside the classes.
+If a piece of code is similar in APIs of the same class, they are placed inside --query static function to avoid rewriting and bulking APIs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- components -->
 
-### `npm test`
+In this folder all the components are placed separately.the structure of folders depend on structure of components in app. we have to separate main page then two main folder. inside each one we have main components and so on.
+The UI folder used for separating most used components that have special design for all over the app. like buttons or headers or cards and.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- constants -->
 
-### `npm run build`
+All of the hardcode parts of code will extract here for having better control on the performance of app. like colors, links, strings and etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- helpers -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+functions that haven't any react hook inside on may be used many times in entire app. like calculations, resizes, transformations.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- hooks -->
 
-### `npm run eject`
+all of functions that can used as hook or using hooks inside, mostly async functions will placed here. ( we don't need it yet and we haven't )
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- store -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+all of state management libraries and functionalities placed here. like redux, context, moboX and etc if used.
