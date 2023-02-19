@@ -1,0 +1,23 @@
+.jobCardContainer {
+  width: 20%;
+  margin: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+  min-height: 180px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.jobTitle {
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.jobText {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  text-align: center;
+  text-align: justify;
+}

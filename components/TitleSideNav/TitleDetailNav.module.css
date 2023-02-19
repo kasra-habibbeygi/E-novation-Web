@@ -1,0 +1,10 @@
+.container {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+  font-size: 0.7rem;
+  margin-left: 1vw;
+  font-weight: 500;
+}

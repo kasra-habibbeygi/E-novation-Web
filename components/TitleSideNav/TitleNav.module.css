@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2vw;
+}
+.titleContainer {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0 20px; */
+  /* width: 100%; */
+  display: flex;
+}
+.title {
+  margin-right: 2vw;
+}
+.title0 {
+  font-size: 1.7rem;
+}
+.title1 {
+  font-size: 1.3rem;
+}
+.title2 {
+  font-size: 1.2rem;
+}
