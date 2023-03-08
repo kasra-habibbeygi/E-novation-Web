@@ -1,14 +1,4 @@
-@font-face {
-    font-family: "main";
-    src: url(../../fonts/ProductSansRegular.ttf) format("truetype");
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "main";
-    src: url(../../fonts/ProductSansBold.ttf) format("truetype");
-    font-weight: 900;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 * {
     box-sizing: border-box;
@@ -23,7 +13,8 @@ table {
 
 body,
 html {
-    font-family: 'main';
+    font-family: 'Open Sans';
+    background-color: #F2F5FA;
 }
 
 body {
@@ -84,7 +75,7 @@ a {
 button {
     cursor: pointer;
     border: none;
-    font-family: 'main' !important;
+    font-family: 'Open Sans' !important;
 }
 
 h1,
@@ -105,4 +96,8 @@ p {
 input {
     font-size: 0.9rem;
     font-weight: 400;
+}
+
+input::placeholder{
+    font-family: 'Open Sans';
 }

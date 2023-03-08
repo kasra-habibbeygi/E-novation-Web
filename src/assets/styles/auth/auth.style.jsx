@@ -11,6 +11,7 @@ export const AuthField = styled.div({
         justifyContent: 'center',
         flexDirection: 'column',
         padding: '0 50px',
+        backgroundColor: 'white',
 
         img: {
             width: '300px',
@@ -22,23 +23,22 @@ export const AuthField = styled.div({
         flexDirection: 'column',
         width: '90%',
         margin: '30px auto',
-        gap: '40px',
         boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
-        paddingBottom: '30px',
         borderRadius: '6px',
         overflow: 'hidden',
 
         '& .right_field': {
-            width: '100%'
+            width: '100%',
+            padding: '40px 50px'
         }
     },
 
     '@media (max-width: 500px)': {
         '& .right_field': {
-            padding: '0 20px',
+            padding: '40px 20px',
 
             img: {
-                width: '90%'
+                width: '80%'
             }
         }
     }
