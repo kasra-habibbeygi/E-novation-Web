@@ -14,7 +14,6 @@ export default class AuthAPI {
             if (response?.status === 202) {
                 localStorage.setItem(localStorageNames.user, JSON.stringify({ ...response.data.data }));
                 Global.user = response.data.data;
-                console.log(response.data.data);
                 return response.data.data;
             }
             return null;
