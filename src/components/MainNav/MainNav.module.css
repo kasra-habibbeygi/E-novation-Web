@@ -1,0 +1,42 @@
+.mainNav {
+  float: left;
+  width: 8%;
+  min-height: calc(90.5vh);
+  background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  padding-top: 80px;
+  margin: 0;
+}
+
+.item {
+  width: 100%;
+  padding: 5px 0;
+  margin: 10px 0;
+}
+
+.item:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  background-color: var(--lightYellow);
+}
+
+.item:active {
+  background-color: var(--lightYellow);
+}
+
+.anchor {
+  display: block;
+  width: 100%;
+}
+
+.icon {
+  color: var(--baseWhite);
+  display: block;
+  width: 100%;
+  height: 2.5vw;
+  margin-left: 5px;
+}
