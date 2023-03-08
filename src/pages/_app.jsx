@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <Provider store={Store}>
             <ThemeProvider theme={ThemeConfig}>
                 <Toaster
-                    position='bottom-right'
+                    position='bottom-left'
                     containerStyle={{
                         zIndex: 9999
                     }}

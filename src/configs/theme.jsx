@@ -1,15 +1,12 @@
 const theme = {
     colors: {
         primary: '#192570',
-        secondary: '#192570',
-        lightGray: '#192570',
-        darkGray: '#192570',
-        baseWhite: '#192570',
-        warning: '#192570',
-        lightYellow: '#192570',
-        lightShadow: '#192570',
-        darkYellow: '#192570',
-        lighterGray: '#192570'
+        secondary: '#f2ca30',
+        danger: '#f71a3e',
+        warning: '#f7a61a',
+        darkGray: '#575757',
+        gray: '#888888',
+        inputBorder: '#e9e9e9'
     }
 };
 

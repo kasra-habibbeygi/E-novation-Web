@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const utilsReducer = createSlice({
-    name: 'utils',
+export const toolsReducer = createSlice({
+    name: 'tools',
     initialState: {
         loader: false,
         restoreRequire: false
@@ -16,6 +16,6 @@ export const utilsReducer = createSlice({
     }
 });
 
-export const { loaderHandler, restoreRequireHanler } = utilsReducer.actions;
+export const { loaderHandler, restoreRequireHanler } = toolsReducer.actions;
 
-export default utilsReducer.reducer;
+export default toolsReducer.reducer;

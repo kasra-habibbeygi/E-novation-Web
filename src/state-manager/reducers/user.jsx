@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const userReducer = createSlice({
     name: 'userInfo',
     initialState: {
-        login: typeof window !== 'undefined' && localStorage.getItem('accessToken') !== null ? true : false
+        loginStaus: false
     },
     reducers: {
         authStateHandler: (state, action) => {
-            state.login = action.payload;
+            state.loginStaus = action.payload;
         }
     }
 });
