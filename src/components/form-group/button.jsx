@@ -7,7 +7,7 @@ import { ButtonField } from './button.style';
 const Input = ({ text, borderType = 'normal', color = 'primary', loading = false, extraClass, disabled = false, clickHandler }) => {
     return (
         <ButtonField borderType={borderType} color={color} className={`${disabled ? 'disabled' : ''} ${extraClass}`} onClick={clickHandler}>
-            {loading ? <PulseLoader color='#b7d1fd' loading={loading} size={10} /> : text}
+            {loading ? <PulseLoader color='#FFFFFF' loading={loading} size={10} /> : text}
         </ButtonField>
     );
 };

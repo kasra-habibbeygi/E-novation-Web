@@ -96,6 +96,7 @@ p {
 input {
     font-size: 0.9rem;
     font-weight: 400;
+    font-family: 'Open Sans';
 }
 
 input::placeholder{

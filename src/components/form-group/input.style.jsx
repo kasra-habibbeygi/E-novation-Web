@@ -19,7 +19,6 @@ export const InputField = styled.div(props => ({
         borderRadius: '6px',
         border: `1px solid ${props.theme.colors.inputBorder}`,
         color: '#4e4e4e',
-        fontFamily: 'main',
 
         '&::placeholder': {
             color: '#bebebe'
