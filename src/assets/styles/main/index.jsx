@@ -51,3 +51,13 @@ export const HistoryMainField = styled.section({
         }
     }
 });
+
+export const CurrentJobsField = styled.section({
+    header: {
+        marginBottom: '40px',
+
+        h3: {
+            fontSize: '1.4rem'
+        }
+    }
+});
