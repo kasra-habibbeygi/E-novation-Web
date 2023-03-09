@@ -41,3 +41,13 @@ export const DashboardMainField = styled.section({
         gap: '20px'
     }
 });
+
+export const HistoryMainField = styled.section({
+    header: {
+        marginBottom: '40px',
+
+        h3: {
+            fontSize: '1.4rem'
+        }
+    }
+});
