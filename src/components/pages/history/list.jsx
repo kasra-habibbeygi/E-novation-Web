@@ -9,27 +9,27 @@ const HistoryList = () => {
                 <div>
                     <p>
                         <span>ID No : </span>
-                        64238
+                        <b>64238</b>
                     </p>
                     <p>
                         <span>Order No : </span>
-                        12
+                        <b>12</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Req No :</span>
-                        467513
+                        <span>Req No : </span>
+                        <b>467513</b>
                     </p>
                     <p>
-                        <span>End Date :</span>
-                        2022 / 03 / 12
+                        <span>End Date : </span>
+                        <b>2022/03/12</b>
                     </p>
                 </div>
             </li>
@@ -38,27 +38,27 @@ const HistoryList = () => {
                 <div>
                     <p>
                         <span>ID No : </span>
-                        64238
+                        <b>64238</b>
                     </p>
                     <p>
                         <span>Order No : </span>
-                        12
+                        <b>12</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Req No :</span>
-                        467513
+                        <span>Req No : </span>
+                        <b>467513</b>
                     </p>
                     <p>
-                        <span>End Date :</span>
-                        2022 / 03 / 12
+                        <span>End Date : </span>
+                        <b>2022/03/12</b>
                     </p>
                 </div>
             </li>
@@ -67,27 +67,27 @@ const HistoryList = () => {
                 <div>
                     <p>
                         <span>ID No : </span>
-                        64238
+                        <b>64238</b>
                     </p>
                     <p>
                         <span>Order No : </span>
-                        12
+                        <b>12</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Req No :</span>
-                        467513
+                        <span>Req No : </span>
+                        <b>467513</b>
                     </p>
                     <p>
-                        <span>End Date :</span>
-                        2022 / 03 / 12
+                        <span>End Date : </span>
+                        <b>2022/03/12</b>
                     </p>
                 </div>
             </li>
@@ -96,27 +96,27 @@ const HistoryList = () => {
                 <div>
                     <p>
                         <span>ID No : </span>
-                        64238
+                        <b>64238</b>
                     </p>
                     <p>
                         <span>Order No : </span>
-                        12
+                        <b>12</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Patent No :</span>
-                        15476
+                        <span>Patent No : </span>
+                        <b>15476</b>
                     </p>
                     <p>
-                        <span>Req No :</span>
-                        467513
+                        <span>Req No : </span>
+                        <b>467513</b>
                     </p>
                     <p>
-                        <span>End Date :</span>
-                        2022 / 03 / 12
+                        <span>End Date : </span>
+                        <b>2022/03/12</b>
                     </p>
                 </div>
             </li>

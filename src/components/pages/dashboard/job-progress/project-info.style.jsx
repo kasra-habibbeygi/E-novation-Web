@@ -23,5 +23,15 @@ export const MainField = styled.section({
             padding: '10px 20px',
             transition: 'all linear 0.2s'
         }
+    },
+
+    '@media (max-width: 1300px)': {
+        width: '100%'
+    },
+
+    '@media (max-width: 500px)': {
+        p: {
+            fontSize: '0.8rem'
+        }
     }
 });

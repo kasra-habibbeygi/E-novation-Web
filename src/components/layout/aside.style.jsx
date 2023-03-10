@@ -35,5 +35,14 @@ export const AsideField = styled.aside(props => ({
     img: {
         width: '27px',
         height: 'auto'
+    },
+
+    '@media (max-width: 500px)': {
+        width: '50px',
+
+        img: {
+            width: '23px',
+            height: 'auto'
+        }
     }
 }));

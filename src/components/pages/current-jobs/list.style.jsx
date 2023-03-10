@@ -26,5 +26,23 @@ export const MainField = styled.div({
             padding: '5px 25px',
             marginTop: '20px'
         }
+    },
+
+    '@media (max-width: 1300px)': {
+        div: {
+            width: '31%'
+        }
+    },
+
+    '@media (max-width: 800px)': {
+        div: {
+            width: '46%'
+        }
+    },
+
+    '@media (max-width: 600px)': {
+        div: {
+            width: '100%'
+        }
     }
 });

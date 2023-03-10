@@ -4,7 +4,8 @@ export const toolsReducer = createSlice({
     name: 'tools',
     initialState: {
         loader: false,
-        restoreRequire: false
+        restoreRequire: false,
+        userAsideStatus: false
     },
     reducers: {
         loaderHandler: (state, action) => {
@@ -12,10 +13,13 @@ export const toolsReducer = createSlice({
         },
         restoreRequireHanler: (state, action) => {
             state.restoreRequire = action.payload;
+        },
+        userAsideStatusHandler: (state, action) => {
+            state.userAsideStatus = action.payload;
         }
     }
 });
 
-export const { loaderHandler, restoreRequireHanler } = toolsReducer.actions;
+export const { loaderHandler, restoreRequireHanler, userAsideStatusHandler } = toolsReducer.actions;
 
 export default toolsReducer.reducer;

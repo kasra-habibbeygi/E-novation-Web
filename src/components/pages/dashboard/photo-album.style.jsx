@@ -13,5 +13,17 @@ export const Card = styled.div(props => ({
     borderRadius: '6px',
     background: `url(${props.background})`,
     backgroundSize: 'cover',
-    backgroundPosition: 'center'
+    backgroundPosition: 'center',
+
+    '@media (max-width: 1300px)': {
+        width: '30%'
+    },
+
+    '@media (max-width: 800px)': {
+        width: '46%'
+    },
+
+    '@media (max-width: 600px)': {
+        width: '100%'
+    }
 }));

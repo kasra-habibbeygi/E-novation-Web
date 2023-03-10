@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { toast } from 'react-hot-toast';
 import validator from 'validator';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
@@ -19,6 +18,7 @@ import { Errors } from '@/src/utils/constasts';
 import { LoginApi } from '@/src/api-request/auth';
 
 const LoginForm = () => {
+    const [errorText, setErrorText] = useState('');
     const dispatch = useDispatch();
     const router = useRouter();
     const [loading, setLoading] = useState(false);
@@ -36,9 +36,9 @@ const LoginForm = () => {
 
     const submitHandler = () => {
         if (validator.isEmpty(inputValues.email) || validator.isEmpty(inputValues.password)) {
-            toast.error(Errors.EMPTY_FIELD);
+            setErrorText(Errors.EMPTY_FIELD);
         } else if (!validator.isEmail(inputValues.email)) {
-            toast.error(Errors.IS_NOT_EMAIL);
+            setErrorText(Errors.IS_NOT_EMAIL);
         } else {
             setLoading(true);
             LoginApi(inputValues)
@@ -71,6 +71,7 @@ const LoginForm = () => {
                 value={inputValues.password}
             />
             <Button text='Login' loading={loading} color='warning' clickHandler={submitHandler} />
+            <p className='alerts'>{errorText}</p>
         </AuthField>
     );
 };

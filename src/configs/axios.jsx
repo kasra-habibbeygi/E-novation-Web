@@ -1,10 +1,8 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-let URL = 'http://2.56.155.102:3000/api/v1/';
-
 const instance = axios.create({
-    baseURL: URL
+    baseURL: process.env.URL
 });
 
 instance.interceptors.request.use(async config => {
@@ -22,7 +20,7 @@ instance.interceptors.request.use(async config => {
 
         if (accessTokenMaxExpiredTimestamp < Date.now() + 10 * 60000) {
             axios
-                .put(`${URL}admins/session`, { token: accessToken.token })
+                .put(`${process.env.URL}admins/session`, { token: accessToken.token })
                 .then(res => {
                     localStorage.setItem(
                         'accessToken',

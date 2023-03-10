@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const MainField = styled.div({
+export const MainField = styled.div(props => ({
     backgroundColor: 'white',
     padding: '20px',
     width: 'max-content',
@@ -18,15 +18,10 @@ export const MainField = styled.div({
         li: {
             display: 'flex',
             alignItems: 'center',
-            cursor: 'pointer',
             border: '1px solid #f1f1f1',
             borderRadius: '8px',
             padding: '10px 20px',
             transition: 'all linear 0.2s',
-
-            '&:hover': {
-                backgroundColor: '#f5f5f5'
-            },
 
             img: {
                 width: '30px',
@@ -35,9 +30,24 @@ export const MainField = styled.div({
             },
 
             '&.active': {
-                backgroundColor: '#3b3b3b',
+                backgroundColor: props.theme.colors.primary,
                 color: 'white'
             }
         }
+    },
+
+    '@media (max-width: 1300px)': {
+        width: '100%'
+    },
+
+    '@media (max-width: 500px)': {
+        p: {
+            fontSize: '0.8rem'
+        },
+
+        img: {
+            width: '25px !important',
+            marginRight: '10px !important'
+        }
     }
-});
+}));

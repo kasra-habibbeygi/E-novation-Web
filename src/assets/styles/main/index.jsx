@@ -39,6 +39,36 @@ export const DashboardMainField = styled.section({
     '& .content_field': {
         display: 'flex',
         gap: '20px'
+    },
+
+    '@media (max-width: 1300px)': {
+        '& .content_field': {
+            flexDirection: 'column'
+        }
+    },
+
+    '@media (max-width: 800px)': {
+        header: {
+            flexDirection: 'column',
+            gap: '20px',
+            alignItems: 'flex-start',
+
+            '& .right_field': {
+                button: {
+                    padding: '10px 10px'
+                }
+            }
+        }
+    },
+
+    '@media (max-width: 500px)': {
+        header: {
+            '& .right_field': {
+                button: {
+                    padding: '10px 10px'
+                }
+            }
+        }
     }
 });
 

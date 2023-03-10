@@ -33,22 +33,31 @@ export const UserAsideField = styled.aside(props => ({
     },
 
     '& .user_info_field': {
-        marginTop: '30px',
-        backgroundColor: 'white',
-        borderRadius: '8px',
-        display: 'flex',
-        alignContent: 'center',
-        justifyContent: 'space-between',
-        textAlign: 'center',
-        padding: '20px 15px',
+        width: '100%',
+        background: props.theme.colors.primary,
+        position: 'sticky',
+        top: '-50px',
+        zIndex: '1',
+        paddingBottom: '50px',
 
-        p: {
-            fontSize: '0.9rem'
-        },
+        '& .content_field': {
+            marginTop: '30px',
+            backgroundColor: 'white',
+            borderRadius: '8px',
+            display: 'flex',
+            alignContent: 'center',
+            justifyContent: 'space-between',
+            textAlign: 'center',
+            padding: '20px 15px',
 
-        b: {
-            fontSize: '1.5rem',
-            color: props.theme.colors.primary
+            p: {
+                fontSize: '0.9rem'
+            },
+
+            b: {
+                fontSize: '1.5rem',
+                color: props.theme.colors.primary
+            }
         }
     },
 
@@ -108,5 +117,59 @@ export const UserAsideField = styled.aside(props => ({
                 color: '#7487ff'
             }
         }
+    },
+
+    '@media (max-width: 1200px)': {
+        right: props.status ? '0' : '-400px',
+        transition: 'all 0.5s cubic-bezier(0, 0, 0.2, 1) 0s'
+    },
+
+    '@media (max-width: 500px)': {
+        width: '320px',
+        padding: '50px 12px',
+
+        h3: {
+            fontSize: '1.4rem'
+        },
+
+        '& .user_info_field': {
+            paddingBottom: '30px',
+
+            '& .content_field': {
+                p: {
+                    fontSize: '0.8rem'
+                }
+            }
+        },
+
+        '& .messages_field': {
+            img: {
+                width: '40px'
+            },
+
+            '& .message': {
+                div: {
+                    marginLeft: '15px'
+                }
+            }
+        }
+    }
+}));
+
+export const Layout = styled.div(props => ({
+    width: '100%',
+    height: '100vh',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    backgroundColor: 'black',
+    opacity: '0',
+    pointerEvents: 'none',
+    transition: 'all 0.5s cubic-bezier(0, 0, 0.2, 1) 0s',
+    cursor: 'pointer',
+
+    '@media (max-width: 1200px)': {
+        opacity: props.status ? '0.7' : '0',
+        pointerEvents: props.status ? 'initial' : 'none'
     }
 }));
