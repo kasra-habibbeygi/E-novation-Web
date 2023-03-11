@@ -14,6 +14,26 @@ export const Card = styled.div(props => ({
     background: `url(${props.background})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    cursor: 'pointer',
+    position: 'relative',
+
+    div: {
+        position: 'absolute',
+        bottom: '10px',
+        right: '10px',
+        backgroundColor: '#000000a8',
+        borderRadius: '5px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '40px',
+        height: '40px',
+
+        img: {
+            height: 'auto',
+            width: '20px'
+        }
+    },
 
     '@media (max-width: 1300px)': {
         width: '30%'
@@ -25,5 +45,61 @@ export const Card = styled.div(props => ({
 
     '@media (max-width: 600px)': {
         width: '100%'
+    }
+}));
+
+export const ModalField = styled.div(props => ({
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'auto',
+    opacity: props.status ? '1' : '0',
+    pointerEvents: props.status ? 'initial' : 'none',
+    zIndex: '11',
+
+    '& .layout': {
+        width: '100%',
+        minHeight: '100vh',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        backgroundColor: '#000000c4',
+        zIndex: '11'
+    },
+
+    '& .content': {
+        position: 'relative',
+        zIndex: '12',
+        width: '700px',
+        background: 'rgb(255 255 255 / 13%)',
+        backdropFilter: 'blur( 7px )',
+        borderRadius: '10px',
+        padding: '30px'
+    },
+
+    img: {
+        width: '100%',
+        height: '500px',
+        borderRadius: '10px',
+        marginBottom: '30px'
+    },
+
+    p: {
+        color: 'white'
+    },
+
+    button: {
+        marginTop: '30px'
+    },
+
+    '@media (max-width: 800px)': {
+        img: {
+            height: 'auto'
+        }
     }
 }));

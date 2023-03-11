@@ -6,7 +6,7 @@ export const ButtonField = styled.button(props => ({
     textAlign: 'center',
     padding: '10px',
     color: 'white',
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     backgroundColor:
         props.color === 'primary'
             ? props.theme.colors.primary

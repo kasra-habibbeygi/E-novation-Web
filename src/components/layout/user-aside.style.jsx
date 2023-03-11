@@ -11,6 +11,7 @@ export const UserAsideField = styled.aside(props => ({
     flexDirection: 'column',
     padding: '50px 30px',
     overflow: 'auto',
+    zIndex: '12',
 
     img: {
         width: '80px',
@@ -167,6 +168,7 @@ export const Layout = styled.div(props => ({
     pointerEvents: 'none',
     transition: 'all 0.5s cubic-bezier(0, 0, 0.2, 1) 0s',
     cursor: 'pointer',
+    zIndex: '11',
 
     '@media (max-width: 1200px)': {
         opacity: props.status ? '0.7' : '0',

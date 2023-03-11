@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import validator from 'validator';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
-import { authStateHandler } from '@/src/state-manager/reducers/user';
+import { authStateHandler, infoHandler } from '@/src/state-manager/reducers/user';
 
 // Assets
 import { AuthField } from './form.style';
@@ -42,8 +42,10 @@ const LoginForm = () => {
         } else {
             setLoading(true);
             LoginApi(inputValues)
-                .then(() => {
+                .then(res => {
+                    localStorage.setItem('userInfo', JSON.stringify(res.data));
                     dispatch(authStateHandler(true));
+                    dispatch(infoHandler(res.data));
                     router.push('/dashboard');
                 })
                 .catch(() => {})

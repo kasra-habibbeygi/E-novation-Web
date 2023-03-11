@@ -10,6 +10,7 @@ export const NavbarField = styled.nav({
     position: 'fixed',
     top: '0',
     width: 'calc(100% - 400px)',
+    zIndex: '5',
 
     img: {
         width: '140px',

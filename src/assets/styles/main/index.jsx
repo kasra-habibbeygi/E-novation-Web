@@ -68,6 +68,10 @@ export const DashboardMainField = styled.section({
                     padding: '10px 10px'
                 }
             }
+        },
+
+        '& .right_field': {
+            flexWrap: 'wrap'
         }
     }
 });
