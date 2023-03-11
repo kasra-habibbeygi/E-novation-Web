@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // Assets
@@ -9,6 +11,13 @@ import Logo from '../assets/images/logo.png';
 import AuthForm from '../components/pages/auth/form';
 
 const Login = () => {
+    const router = useRouter();
+    useEffect(() => {
+        if (typeof window !== 'undefined' && localStorage.getItem('userInfo') !== null) {
+            router.push('/current-jobs');
+        }
+    }, [router]);
+
     return (
         <AuthField>
             <ImageField image={AuthImg.src}></ImageField>

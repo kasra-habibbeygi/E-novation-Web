@@ -46,7 +46,7 @@ const LoginForm = () => {
                     localStorage.setItem('userInfo', JSON.stringify(res.data));
                     dispatch(authStateHandler(true));
                     dispatch(infoHandler(res.data));
-                    router.push('/dashboard');
+                    router.push('/current-jobs');
                 })
                 .catch(() => {})
                 .finally(() => {

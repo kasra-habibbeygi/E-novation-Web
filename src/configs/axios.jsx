@@ -14,6 +14,10 @@ instance.interceptors.request.use(async config => {
         }
     }
 
+    if (typeof window !== 'undefined' && localStorage.getItem('userInfo') !== null) {
+        config.headers.Authorization = `Token ${JSON.parse(localStorage.getItem('userInfo')).token}`;
+    }
+
     return config;
 });
 
@@ -25,9 +29,9 @@ instance.interceptors.response.use(
         return res;
     },
     error => {
-        if (error?.response?.status === 409) {
-            localStorage.removeItem('accessToken');
-            window.location.href = '/login';
+        if (error?.response?.status === 401) {
+            // localStorage.removeItem('userInfo');
+            // window.location.href = '/login';
         } else {
             if (error?.response?.data?.message) {
                 toast.error(error?.response?.data?.message, { style: { zIndex: 2000 } });

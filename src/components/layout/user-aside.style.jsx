@@ -13,10 +13,14 @@ export const UserAsideField = styled.aside(props => ({
     overflow: 'auto',
     zIndex: '12',
 
-    img: {
-        width: '80px',
-        height: 'auto',
-        margin: '0 auto'
+    '& .avatar': {
+        width: '110px',
+        minHeight: '110px',
+        margin: '0 auto',
+        borderRadius: '50px',
+        background: `url(${props.avatarImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
     },
 
     h3: {

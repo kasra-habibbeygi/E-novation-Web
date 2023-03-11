@@ -8,14 +8,7 @@ export const userReducer = createSlice({
         info:
             typeof window !== 'undefined' && localStorage.getItem('userInfo') !== null
                 ? JSON.parse(localStorage.getItem('userInfo'))
-                : {
-                    allproject: 0,
-                    company: '',
-                    id: 0,
-                    img: '',
-                    openproject: 0,
-                    token: '0'
-                }
+                : ''
     },
     reducers: {
         authStateHandler: (state, action) => {
