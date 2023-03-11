@@ -6,7 +6,6 @@ const nextConfig = {
             {
                 protocol: 'http',
                 hostname: '154.26.136.182',
-                port: '8001',
                 pathname: '/media/**'
             }
         ]

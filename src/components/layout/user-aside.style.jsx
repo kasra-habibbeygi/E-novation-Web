@@ -106,6 +106,11 @@ export const UserAsideField = styled.aside(props => ({
                     left: '-7px',
                     borderRadius: '5px',
                     transform: 'rotate(-45deg)'
+                },
+
+                small: {
+                    color: '#919191',
+                    marginTop: '10px'
                 }
             },
 

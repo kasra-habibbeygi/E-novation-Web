@@ -29,7 +29,7 @@ const CurrentJobsList = () => {
                 ? openJobsList.map(item => (
                     <div key={`current_jobs_card_${item.id}`}>
                         <h3>{item.name}</h3>
-                        <Link href='/'>
+                        <Link href={`/dashboard?jobId=${item.id}`}>
                             <Button text='View' color='warning' />
                         </Link>
                     </div>

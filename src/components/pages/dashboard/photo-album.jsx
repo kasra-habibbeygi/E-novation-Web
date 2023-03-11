@@ -1,84 +1,57 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 
 // Assets
 import { MainField, Card, ModalField } from './photo-album.style';
-import CarImg from '@/src/assets/images/car.jpg';
 import Share from '@/src/assets/images/icons/share.svg';
 
 // Component
 import Button from '../../form-group/button';
+import EmptyField from '../../template/empty-field';
+
+// API
+import { GetJobAblum } from '@/src/api-request/jobs/album';
 
 const PhotoAlbum = () => {
+    const router = useRouter();
     const [infoModalStatus, setInfoModalStatus] = useState(false);
+    const [specificInfo, setSpecificInfo] = useState({});
+    const [albumList, setAlbumList] = useState([]);
 
-    const infoModalStatusHandler = () => {
+    useEffect(() => {
+        GetJobAblum(router.query.jobId)
+            .then(res => {
+                setAlbumList(res);
+            })
+            .catch(() => {});
+    }, [router.query.jobId]);
+
+    const infoModalStatusHandler = item => {
+        setSpecificInfo(item);
         setInfoModalStatus(true);
     };
 
     return (
         <>
             <MainField>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
-                <Card background={CarImg.src} onClick={infoModalStatusHandler}>
-                    <div>
-                        <Image src={Share} alt='' width={50} />
-                    </div>
-                </Card>
+                {albumList.length ? (
+                    albumList.map(item => (
+                        <Card background={item.img} onClick={() => infoModalStatusHandler(item)} key={`album_ard_${item.id}`}>
+                            <div>
+                                <Image src={Share} alt='' width={50} />
+                            </div>
+                        </Card>
+                    ))
+                ) : (
+                    <EmptyField />
+                )}
             </MainField>
             <ModalField status={infoModalStatus}>
                 <div className='layout'></div>
                 <div className='content'>
-                    <Image src={CarImg} alt='' width={800} />
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur doloribus, blanditiis exercitationem dolorem
-                        quia distinctio numquam accusamus repellendus, suscipit ea minus, amet delectus. Aspernatur maxime consequuntur
-                        eaque odit ab molestias?
-                    </p>
+                    <Image src={specificInfo.img} alt='' width={800} height={500} />
+                    <p>{specificInfo?.description}</p>
                     <Button text='Close' clickHandler={() => setInfoModalStatus(false)} color='danger' />
                 </div>
             </ModalField>

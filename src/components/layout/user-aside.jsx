@@ -9,21 +9,63 @@ import Image from 'next/image';
 import { UserAsideField, Layout } from './user-aside.style';
 import AvatarImg from '../../assets/images/icons/avatar.svg';
 
+// component
+import EmptyField from '../template/empty-field';
+
+// API
+import { GetJobsMessages } from '../../api-request/jobs/messages';
+
 const UserAside = () => {
     const [domLoaded, setDomLoaded] = useState(false);
     const router = useRouter();
     const display = useDispatch();
     const asideStatus = useSelector(state => state.Tools.userAsideStatus);
     const userInfo = useSelector(state => state.UserInfo.info);
+    const [messagesList, setMessagesList] = useState([]);
 
     useEffect(() => {
         setDomLoaded(true);
-    }, []);
+
+        if (router.query.jobId) {
+            GetJobsMessages(router.query.jobId)
+                .then(res => {
+                    setMessagesList(res);
+                })
+                .catch(() => {})
+                .finally(() => {});
+        }
+    }, [router.query.jobId]);
 
     const logOutHandler = () => {
         router.push('/current-jobs');
         localStorage.removeItem('userInfo');
         display(infoHandler(''));
+    };
+
+    const Messages = () => {
+        if (router.query.jobId) {
+            return (
+                <div className='messages_field'>
+                    <header>Messages</header>
+                    {messagesList.length ? (
+                        messagesList.map(item => (
+                            <div className='message' key={`aside_messages_field_${item.id}`}>
+                                <Image src={AvatarImg} alt='' width={100} />
+                                <div>
+                                    <b>E-novation Admin</b>
+                                    <p>{item.comment}</p>
+                                    <small>{item.time}</small>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <EmptyField />
+                    )}
+                </div>
+            );
+        }
+
+        return <></>;
     };
 
     return (
@@ -33,14 +75,7 @@ const UserAside = () => {
                 status={asideStatus}
                 avatarImage={domLoaded && (userInfo.img ? `${process.env.URL}/media/${userInfo.img}` : AvatarImg)}
             >
-                {/* <Image
-                    src={domLoaded && (userInfo.img ? `${process.env.URL}/media/${userInfo.img}` : AvatarImg)}
-                    alt=''
-                    width={100}
-                    height={100}
-                /> */}
                 <div className='avatar'></div>
-
                 <h3>Welcome {domLoaded && userInfo.company}</h3>
                 <button onClick={logOutHandler}>Log Out</button>
                 <div className='user_info_field'>
@@ -55,65 +90,7 @@ const UserAside = () => {
                         </div>
                     </div>
                 </div>
-                <div className='messages_field'>
-                    <header>Messages</header>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                    <div className='message'>
-                        <Image src={AvatarImg} alt='' width={100} />
-                        <div>
-                            <b>Jone Doe</b>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic suscipit neque</p>
-                        </div>
-                    </div>
-                </div>
+                {Messages()}
             </UserAsideField>
         </>
     );

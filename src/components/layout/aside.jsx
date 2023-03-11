@@ -2,11 +2,7 @@ import Link from 'next/link';
 
 // Assets
 import { AsideField } from './aside.style';
-import Email from '../../assets/images/icons/email.svg';
 import Home from '../../assets/images/icons/home.svg';
-// import Warning from '../../assets/images/icons/warning.svg';
-// import User from '../../assets/images/icons/user.svg';
-import Chart from '../../assets/images/icons/donut-chart.svg';
 import Image from 'next/image';
 
 const Aside = () => {
@@ -14,18 +10,8 @@ const Aside = () => {
         <AsideField>
             <ul>
                 <li>
-                    <Link href='/dashboard'>
-                        <Image src={Home} alt='' width={50} />
-                    </Link>
-                </li>
-                <li>
                     <Link href='/current-jobs'>
-                        <Image src={Email} alt='' width={50} />
-                    </Link>
-                </li>
-                <li>
-                    <Link href='/history'>
-                        <Image src={Chart} alt='' width={50} />
+                        <Image src={Home} alt='' width={50} />
                     </Link>
                 </li>
             </ul>

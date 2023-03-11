@@ -1,64 +1,43 @@
-import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 // Assets
 import { MainField } from './document.style';
 
 // Component
 import Button from '../../form-group/button';
+import EmptyField from '../../template/empty-field';
+
+// API
+import { GetJobDocument } from '@/src/api-request/jobs/document';
 
 const Document = () => {
+    const router = useRouter();
+    const [docList, setDocList] = useState([]);
+
+    useEffect(() => {
+        GetJobDocument(router.query.jobId)
+            .then(res => {
+                setDocList(res);
+            })
+            .catch(() => {});
+    }, [router.query.jobId]);
+
     return (
         <MainField>
-            <div>
-                <h3>DOC</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, perspiciatis et earum voluptate blanditiis fugiat,
-                    exercitationem, enim aliquam deleniti veniam ex. Officiis, rem? Repellat nulla sunt accusantium neque modi ipsam?{' '}
-                </p>
-                <Link href='/'>
-                    <Button text='View' color='warning' />
-                </Link>
-            </div>
-            <div>
-                <h3>DOC</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, perspiciatis et earum voluptate blanditiis fugiat,
-                    exercitationem, enim aliquam deleniti veniam ex. Officiis, rem? Repellat nulla sunt accusantium neque modi ipsam?{' '}
-                </p>
-                <Link href='/'>
-                    <Button text='View' color='warning' />
-                </Link>
-            </div>
-            <div>
-                <h3>DOC</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, perspiciatis et earum voluptate blanditiis fugiat,
-                    exercitationem, enim aliquam deleniti veniam ex. Officiis, rem? Repellat nulla sunt accusantium neque modi ipsam?{' '}
-                </p>
-                <Link href='/'>
-                    <Button text='View' color='warning' />
-                </Link>
-            </div>
-            <div>
-                <h3>DOC</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, perspiciatis et earum voluptate blanditiis fugiat,
-                    exercitationem, enim aliquam deleniti veniam ex. Officiis, rem? Repellat nulla sunt accusantium neque modi ipsam?{' '}
-                </p>
-                <Link href='/'>
-                    <Button text='View' color='warning' />
-                </Link>
-            </div>
-            <div>
-                <h3>DOC</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, perspiciatis et earum voluptate blanditiis fugiat,
-                    exercitationem, enim aliquam deleniti veniam ex. Officiis, rem? Repellat nulla sunt accusantium neque modi ipsam?{' '}
-                </p>
-                <Link href='/'>
-                    <Button text='View' color='warning' />
-                </Link>
-            </div>
+            {docList.length ? (
+                docList.map(item => (
+                    <div key={`doc_card_${item.id}`}>
+                        <h3>{item.name}</h3>
+                        <p>{item.description}</p>
+                        <a href={item.att_file} target='_blank'>
+                            <Button text='View' color='warning' />
+                        </a>
+                    </div>
+                ))
+            ) : (
+                <EmptyField />
+            )}
         </MainField>
     );
 };

@@ -22,9 +22,11 @@ export const MainField = styled.div(props => ({
             borderRadius: '8px',
             padding: '10px 20px',
             transition: 'all linear 0.2s',
+            backgroundColor: 'white',
+            color: 'black',
 
             img: {
-                width: '30px',
+                width: '50px',
                 height: 'auto',
                 marginRight: '20px'
             },
@@ -32,6 +34,10 @@ export const MainField = styled.div(props => ({
             '&.active': {
                 backgroundColor: props.theme.colors.primary,
                 color: 'white'
+            },
+
+            '&.deactive': {
+                color: 'gray'
             }
         }
     },

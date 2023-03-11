@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 // Component
 import LayoutProvider from '../components/layout/layout.provider';
@@ -11,8 +12,21 @@ import Button from '../components/form-group/button';
 // Assets
 import { DashboardMainField } from '../assets/styles/main/index';
 
+// API
+import { GetSpecificJobsMessages } from '../api-request/jobs/messages';
+
 const Dashboard = () => {
+    const router = useRouter();
     const [tabsStatus, setTabsStatus] = useState('photoAlbum');
+    const [jobsInfo, setJobsInfo] = useState({});
+
+    useEffect(() => {
+        GetSpecificJobsMessages(router.query.jobId)
+            .then(res => {
+                setJobsInfo(res);
+            })
+            .catch(() => {});
+    }, [router.query.jobId]);
 
     const tabsStatusHanler = status => {
         setTabsStatus(status);
@@ -50,8 +64,8 @@ const Dashboard = () => {
                 {tabsStatus === 'photoAlbum' && <PhotoAlbum />}
                 {tabsStatus === 'jobsProgress' && (
                     <div className='content_field'>
-                        <ProjectList />
-                        <ProjectInfo />
+                        <ProjectList jobsInfo={jobsInfo} />
+                        <ProjectInfo jobsInfo={jobsInfo} />
                     </div>
                 )}
                 {tabsStatus === 'Documents' && <Docuemnt />}

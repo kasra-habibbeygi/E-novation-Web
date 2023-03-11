@@ -21,7 +21,17 @@ export const MainField = styled.section({
             border: '1px solid #f1f1f1',
             borderRadius: '8px',
             padding: '10px 20px',
-            transition: 'all linear 0.2s'
+            transition: 'all linear 0.2s',
+
+            p: {
+                fontSize: '0.9rem',
+                fontWeight: '500'
+            },
+
+            span: {
+                color: '#6d6d6d',
+                fontSize: '0.9rem'
+            }
         }
     },
 
