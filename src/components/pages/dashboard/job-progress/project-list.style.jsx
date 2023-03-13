@@ -3,10 +3,11 @@ import styled from '@emotion/styled';
 export const MainField = styled.div(props => ({
     backgroundColor: 'white',
     padding: '20px',
-    width: 'max-content',
+    width: '100%',
     borderRadius: '8px',
     display: 'flex',
     gap: '20px',
+    minWidth: '500px',
 
     '& .progress_bar': {
         width: '7px',
@@ -31,9 +32,15 @@ export const MainField = styled.div(props => ({
         display: 'flex',
         flexDirection: 'column',
         gap: '8px',
+        width: '100%',
 
         svg: {
-            width: '100%'
+            width: '100%',
+
+            defs: {
+                width: '100%',
+                display: 'block'
+            }
         },
 
         li: {
@@ -65,6 +72,8 @@ export const MainField = styled.div(props => ({
 
     '@media (max-width: 1300px)': {
         width: '100%',
+        borderRadius: '0 8px 8px 8px',
+        minWidth: 'unset',
 
         ul: {
             width: '100%'

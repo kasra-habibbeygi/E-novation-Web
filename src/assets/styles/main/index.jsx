@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const DashboardMainField = styled.section({
+export const DashboardMainField = styled.section(props => ({
     header: {
         display: 'flex',
         alignItems: 'center',
@@ -38,12 +38,69 @@ export const DashboardMainField = styled.section({
 
     '& .content_field': {
         display: 'flex',
-        gap: '20px'
+        gap: '20px',
+        position: 'relative',
+
+        '& .tabs': {
+            position: 'absolute',
+            display: 'none',
+            alignItems: 'center',
+            gap: '10px',
+            top: '-39px',
+
+            button: {
+                backgroundColor: 'white',
+                borderRadius: '5px 5px 0 0',
+                color: 'black',
+                fontSize: '0.9rem',
+                fontWeight: '600',
+                width: '110px',
+
+                '&.active': {
+                    background: props.theme.colors.primary,
+                    color: 'white'
+                }
+            }
+        }
+    },
+
+    '& .project_list': {
+        width: 'max-content'
+    },
+
+    '& .project_info': {
+        width: 'max-content'
     },
 
     '@media (max-width: 1300px)': {
+        header: {
+            marginBottom: '60px'
+        },
+
         '& .content_field': {
-            flexDirection: 'column'
+            flexDirection: 'column',
+
+            '& .tabs': {
+                display: 'flex'
+            }
+        },
+
+        '& .project_list': {
+            width: '100%',
+            display: 'none',
+
+            '&.active': {
+                display: 'block'
+            }
+        },
+
+        '& .project_info': {
+            width: '100%',
+            display: 'none',
+
+            '&.active': {
+                display: 'block'
+            }
         }
     },
 
@@ -64,18 +121,32 @@ export const DashboardMainField = styled.section({
     '@media (max-width: 500px)': {
         header: {
             '& .right_field': {
+                gap: '5px',
+
                 button: {
-                    padding: '10px 10px',
-                    fontSize: '0.8rem'
+                    padding: '10px 5px',
+                    fontSize: '0.75rem',
+                    fontWeight: '600'
                 }
             }
         },
 
         '& .right_field': {
             flexWrap: 'wrap'
+        },
+
+        '& .content_field': {
+            '& .tabs': {
+                top: '-35px',
+
+                button: {
+                    fontSize: '0.7rem',
+                    width: '100px'
+                }
+            }
         }
     }
-});
+}));
 
 export const HistoryMainField = styled.section({
     header: {

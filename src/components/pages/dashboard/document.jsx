@@ -30,10 +30,10 @@ const Document = () => {
         <MainField>
             {isLoaded ? (
                 <>
-                    <CardSkeleton height='300' />
-                    <CardSkeleton height='300' />
-                    <CardSkeleton height='300' />
-                    <CardSkeleton height='300' />
+                    <CardSkeleton height='180' />
+                    <CardSkeleton height='180' />
+                    <CardSkeleton height='180' />
+                    <CardSkeleton height='180' />
                 </>
             ) : docList.length ? (
                 docList.map(item => (

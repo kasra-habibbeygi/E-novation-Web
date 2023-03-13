@@ -40,10 +40,10 @@ const PhotoAlbum = () => {
             <MainField>
                 {isLoaded ? (
                     <>
-                        <CardSkeleton height='300' />
-                        <CardSkeleton height='300' />
-                        <CardSkeleton height='300' />
-                        <CardSkeleton height='300' />
+                        <CardSkeleton height='180' />
+                        <CardSkeleton height='180' />
+                        <CardSkeleton height='180' />
+                        <CardSkeleton height='180' />
                     </>
                 ) : albumList.length ? (
                     albumList.map(item => (

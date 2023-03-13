@@ -20,6 +20,7 @@ const Dashboard = () => {
     const [tabsStatus, setTabsStatus] = useState('jobsProgress');
     const [jobsInfo, setJobsInfo] = useState({});
     const [isLoaded, setIsloaded] = useState(true);
+    const [jobsProgresstabsStatus, setJobsProgressTabsStatus] = useState(0);
 
     useEffect(() => {
         GetSpecificJobsMessages(router.query.jobId)
@@ -46,19 +47,19 @@ const Dashboard = () => {
                         <Button
                             text='Job Progress'
                             borderType='rounded'
-                            extraClass={tabsStatus === 'jobsProgress' && 'active'}
+                            extraClass={tabsStatus === 'jobsProgress' ? 'active' : ''}
                             clickHandler={() => tabsStatusHanler('jobsProgress')}
                         />
                         <Button
                             text='Photo Album'
                             borderType='rounded'
-                            extraClass={tabsStatus === 'photoAlbum' && 'active'}
+                            extraClass={tabsStatus === 'photoAlbum' ? 'active' : ''}
                             clickHandler={() => tabsStatusHanler('photoAlbum')}
                         />
                         <Button
                             text='Documents'
                             borderType='rounded'
-                            extraClass={tabsStatus === 'Documents' && 'active'}
+                            extraClass={tabsStatus === 'Documents' ? 'active' : ''}
                             clickHandler={() => tabsStatusHanler('Documents')}
                         />
                     </div>
@@ -66,8 +67,24 @@ const Dashboard = () => {
                 {tabsStatus === 'photoAlbum' && <PhotoAlbum />}
                 {tabsStatus === 'jobsProgress' && (
                     <div className='content_field'>
-                        <ProjectList jobsInfo={jobsInfo} isLoaded={isLoaded} />
-                        <ProjectInfo jobsInfo={jobsInfo} isLoaded={isLoaded} />
+                        <div className='tabs'>
+                            <Button
+                                text='Job Progress'
+                                extraClass={jobsProgresstabsStatus === 0 ? 'active' : ''}
+                                clickHandler={() => setJobsProgressTabsStatus(0)}
+                            />
+                            <Button
+                                text='Job Info'
+                                extraClass={jobsProgresstabsStatus === 1 ? 'active' : ''}
+                                clickHandler={() => setJobsProgressTabsStatus(1)}
+                            />
+                        </div>
+                        <span className={`project_list ${jobsProgresstabsStatus === 0 ? 'active' : ''}`}>
+                            <ProjectList jobsInfo={jobsInfo} isLoaded={isLoaded} />
+                        </span>
+                        <span className={`project_list ${jobsProgresstabsStatus === 1 ? 'active' : ''}`}>
+                            <ProjectInfo jobsInfo={jobsInfo} isLoaded={isLoaded} />
+                        </span>
                     </div>
                 )}
                 {tabsStatus === 'Documents' && <Docuemnt />}

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const MainField = styled.section({
     backgroundColor: 'white',
     padding: '20px',
-    width: 'max-content',
+    width: '100%',
     borderRadius: '8px',
 
     ul: {
@@ -11,7 +11,15 @@ export const MainField = styled.section({
         display: 'flex',
         flexDirection: 'column',
         gap: '15px',
-        paddingRight: '20px',
+
+        svg: {
+            width: '100%',
+
+            defs: {
+                width: '100%',
+                display: 'block'
+            }
+        },
 
         li: {
             display: 'flex',

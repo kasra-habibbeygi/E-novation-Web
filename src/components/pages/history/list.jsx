@@ -29,10 +29,10 @@ const HistoryList = () => {
         <MainField>
             {isLoaded ? (
                 <>
-                    <CardSkeleton height='130' />
-                    <CardSkeleton height='130' />
-                    <CardSkeleton height='130' />
-                    <CardSkeleton height='130' />
+                    <CardSkeleton height='110' />
+                    <CardSkeleton height='110' />
+                    <CardSkeleton height='110' />
+                    <CardSkeleton height='110' />
                 </>
             ) : historyList.length ? (
                 historyList.map(item => (

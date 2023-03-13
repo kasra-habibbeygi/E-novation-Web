@@ -23,7 +23,7 @@ export const AsideField = styled.aside(props => ({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '15px 0',
+            padding: '15px 5px',
             transition: 'all linear 0.15s',
             flexDirection: 'column',
             gap: '10px',
@@ -49,6 +49,12 @@ export const AsideField = styled.aside(props => ({
         img: {
             width: '23px',
             height: 'auto'
+        },
+
+        ul: {
+            a: {
+                fontSize: '0.7rem'
+            }
         }
     }
 }));
