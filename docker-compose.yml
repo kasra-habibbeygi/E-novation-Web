@@ -12,4 +12,5 @@ services:
 
 networks:
   ng_net:
+    name: e-novation_ng_net
     external: true
