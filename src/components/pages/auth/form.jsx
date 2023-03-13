@@ -25,7 +25,7 @@ const LoginForm = () => {
     const dispatch = useDispatch();
     const router = useRouter();
     const [loading, setLoading] = useState(false);
-    const [passwordType, setPasswordType] = useState('show');
+    const [passwordType, setPasswordType] = useState('hide');
     const [inputValues, setInputValues] = useState({
         email: '',
         password: ''

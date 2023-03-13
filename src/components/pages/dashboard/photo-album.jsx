@@ -9,6 +9,7 @@ import Share from '@/src/assets/images/icons/share.svg';
 // Component
 import Button from '../../form-group/button';
 import EmptyField from '../../template/empty-field';
+import CardSkeleton from '../../skeleton/card';
 
 // API
 import { GetJobAblum } from '@/src/api-request/jobs/album';
@@ -18,11 +19,13 @@ const PhotoAlbum = () => {
     const [infoModalStatus, setInfoModalStatus] = useState(false);
     const [specificInfo, setSpecificInfo] = useState({});
     const [albumList, setAlbumList] = useState([]);
+    const [isLoaded, setIsloaded] = useState(true);
 
     useEffect(() => {
         GetJobAblum(router.query.jobId)
             .then(res => {
                 setAlbumList(res);
+                setIsloaded(false);
             })
             .catch(() => {});
     }, [router.query.jobId]);
@@ -35,7 +38,14 @@ const PhotoAlbum = () => {
     return (
         <>
             <MainField>
-                {albumList.length ? (
+                {isLoaded ? (
+                    <>
+                        <CardSkeleton height='300' />
+                        <CardSkeleton height='300' />
+                        <CardSkeleton height='300' />
+                        <CardSkeleton height='300' />
+                    </>
+                ) : albumList.length ? (
                     albumList.map(item => (
                         <Card background={item.img} onClick={() => infoModalStatusHandler(item)} key={`album_ard_${item.id}`}>
                             <div>

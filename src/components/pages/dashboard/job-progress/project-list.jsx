@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+// Component
+import CardSkeleton from '@/src/components/skeleton/card';
+
 // Assets
 import { MainField } from './project-list.style';
 
@@ -139,18 +142,35 @@ const jobsInfoArr = [
     }
 ];
 
-const ProjectList = ({ jobsInfo }) => {
+const ProjectList = ({ jobsInfo, isLoaded }) => {
     const cardProvider = status => {
-        return jobsInfoArr.map((item, index) => (
-            <li className={status === index + 1 ? 'active' : index + 1 < status ? 'deactive' : 'noraml'} key={`jobs_status_${index + 1}`}>
-                <Image
-                    src={ImageHandler(item.icon, status === index + 1 ? 'yellow' : index + 1 < status ? 'gray' : 'darkYellow')}
-                    alt=''
-                    width={80}
-                />
-                <p>{item.text}</p>
-            </li>
-        ));
+        return isLoaded ? (
+            <>
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+                <CardSkeleton height='50' />
+            </>
+        ) : (
+            jobsInfoArr.map((item, index) => (
+                <li
+                    className={status === index + 1 ? 'active' : index + 1 < status ? 'deactive' : 'noraml'}
+                    key={`jobs_status_${index + 1}`}
+                >
+                    <Image
+                        src={ImageHandler(item.icon, status === index + 1 ? 'yellow' : index + 1 < status ? 'gray' : 'darkYellow')}
+                        alt=''
+                        width={80}
+                    />
+                    <p>{item.text}</p>
+                </li>
+            ))
+        );
     };
 
     return (

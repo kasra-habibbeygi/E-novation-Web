@@ -9,22 +9,32 @@ import { GetHistory } from '@/src/api-request/histroy';
 
 // Component
 import EmptyField from '../../template/empty-field';
+import CardSkeleton from '../../skeleton/card';
 
 const HistoryList = () => {
     const userId = useSelector(state => state.UserInfo.info.id);
     const [historyList, setHistoryList] = useState([]);
+    const [isLoaded, setIsloaded] = useState(true);
 
     useEffect(() => {
         GetHistory(userId)
             .then(res => {
                 setHistoryList(res);
+                setIsloaded(false);
             })
             .catch(() => {});
     }, [userId]);
 
     return (
         <MainField>
-            {historyList.length ? (
+            {isLoaded ? (
+                <>
+                    <CardSkeleton height='130' />
+                    <CardSkeleton height='130' />
+                    <CardSkeleton height='130' />
+                    <CardSkeleton height='130' />
+                </>
+            ) : historyList.length ? (
                 historyList.map(item => (
                     <li key={`history_list_${item.id}`}>
                         <h3>{item.name}</h3>

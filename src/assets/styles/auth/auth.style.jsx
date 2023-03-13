@@ -34,11 +34,13 @@ export const AuthField = styled.div({
     },
 
     '@media (max-width: 500px)': {
+        height: 'max-content',
+
         '& .right_field': {
             padding: '40px 20px',
 
             img: {
-                width: '80%'
+                width: '60%'
             }
         }
     }
@@ -49,5 +51,9 @@ export const ImageField = styled.div(props => ({
     height: '100vh',
     width: '100%',
     backgroundSize: 'cover',
-    backgroundPosition: 'right'
+    backgroundPosition: 'right',
+
+    '@media (max-width: 500px)': {
+        height: '200px'
+    }
 }));

@@ -19,11 +19,13 @@ const Dashboard = () => {
     const router = useRouter();
     const [tabsStatus, setTabsStatus] = useState('jobsProgress');
     const [jobsInfo, setJobsInfo] = useState({});
+    const [isLoaded, setIsloaded] = useState(true);
 
     useEffect(() => {
         GetSpecificJobsMessages(router.query.jobId)
             .then(res => {
                 setJobsInfo(res);
+                setIsloaded(false);
             })
             .catch(() => {});
     }, [router.query.jobId]);
@@ -64,8 +66,8 @@ const Dashboard = () => {
                 {tabsStatus === 'photoAlbum' && <PhotoAlbum />}
                 {tabsStatus === 'jobsProgress' && (
                     <div className='content_field'>
-                        <ProjectList jobsInfo={jobsInfo} />
-                        <ProjectInfo jobsInfo={jobsInfo} />
+                        <ProjectList jobsInfo={jobsInfo} isLoaded={isLoaded} />
+                        <ProjectInfo jobsInfo={jobsInfo} isLoaded={isLoaded} />
                     </div>
                 )}
                 {tabsStatus === 'Documents' && <Docuemnt />}

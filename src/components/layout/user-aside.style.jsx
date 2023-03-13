@@ -141,6 +141,12 @@ export const UserAsideField = styled.aside(props => ({
         }
     },
 
+    '& .loader_field': {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px'
+    },
+
     '@media (max-width: 1200px)': {
         right: props.status ? '0' : '-400px',
         transition: 'all 0.5s cubic-bezier(0, 0, 0.2, 1) 0s'

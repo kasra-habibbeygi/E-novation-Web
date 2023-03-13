@@ -12,6 +12,7 @@ import SimpleLogo from '../../assets/images/simple-logo.png';
 
 // component
 import EmptyField from '../template/empty-field';
+import CardSkeleton from '../skeleton/card';
 
 // API
 import { GetJobsMessages } from '../../api-request/jobs/messages';
@@ -23,6 +24,7 @@ const UserAside = () => {
     const asideStatus = useSelector(state => state.Tools.userAsideStatus);
     const userInfo = useSelector(state => state.UserInfo.info);
     const [messagesList, setMessagesList] = useState([]);
+    const [isLoaded, setIsloaded] = useState(true);
 
     useEffect(() => {
         setDomLoaded(true);
@@ -31,6 +33,7 @@ const UserAside = () => {
             GetJobsMessages(router.query.jobId)
                 .then(res => {
                     setMessagesList(res);
+                    setIsloaded(false);
                 })
                 .catch(() => {})
                 .finally(() => {});
@@ -48,7 +51,13 @@ const UserAside = () => {
             return (
                 <div className='messages_field'>
                     <header>Messages</header>
-                    {messagesList.length ? (
+                    {isLoaded ? (
+                        <div className='loader_field'>
+                            <CardSkeleton height='25' background='#212e81' foregroundColor='#3d4a9e' />
+                            <CardSkeleton height='25' background='#212e81' foregroundColor='#3d4a9e' />
+                            <CardSkeleton height='25' background='#212e81' foregroundColor='#3d4a9e' />
+                        </div>
+                    ) : messagesList.length ? (
                         messagesList.map(item => (
                             <div className='message' key={`aside_messages_field_${item.id}`}>
                                 <span className='message_logo'>

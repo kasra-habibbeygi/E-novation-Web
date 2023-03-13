@@ -32,6 +32,10 @@ export const MainField = styled.div(props => ({
         flexDirection: 'column',
         gap: '8px',
 
+        svg: {
+            width: '100%'
+        },
+
         li: {
             display: 'flex',
             alignItems: 'center',

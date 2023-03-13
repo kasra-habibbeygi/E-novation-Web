@@ -4,7 +4,29 @@ export const MainField = styled.div({
     display: 'flex',
     alignItems: 'center',
     gap: '20px',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+
+    svg: {
+        width: '23%'
+    },
+
+    '@media (max-width: 1300px)': {
+        svg: {
+            width: '30%'
+        }
+    },
+
+    '@media (max-width: 800px)': {
+        svg: {
+            width: '46%'
+        }
+    },
+
+    '@media (max-width: 600px)': {
+        svg: {
+            width: '100%'
+        }
+    }
 });
 
 export const Card = styled.div(props => ({

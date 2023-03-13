@@ -7,6 +7,10 @@ export const MainField = styled.ul(props => ({
     alignItems: 'center',
     gap: '20px',
 
+    svg: {
+        width: '48%'
+    },
+
     li: {
         display: 'flex',
         width: '48%',
@@ -48,6 +52,10 @@ export const MainField = styled.ul(props => ({
 
     '@media (max-width: 800px)': {
         li: {
+            width: '100%'
+        },
+
+        svg: {
             width: '100%'
         }
     },
