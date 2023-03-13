@@ -5,28 +5,45 @@ export const MainField = styled.div(props => ({
     padding: '20px',
     width: 'max-content',
     borderRadius: '8px',
+    display: 'flex',
+    gap: '20px',
+
+    '& .progress_bar': {
+        width: '7px',
+        backgroundColor: props.theme.colors.secondary,
+        borderRadius: '50px',
+        position: 'relative',
+
+        '&::after': {
+            content: '""',
+            width: '100%',
+            height: `calc(11.111111111% * ${props.state})`,
+            backgroundColor: props.theme.colors.primary,
+            borderRadius: '50px',
+            position: 'absolute',
+            top: '0',
+            left: ''
+        }
+    },
 
     ul: {
         listStyle: 'none',
         display: 'flex',
         flexDirection: 'column',
-        gap: '15px',
-        overflow: 'auto',
-        maxHeight: '500px',
-        paddingRight: '20px',
+        gap: '8px',
 
         li: {
             display: 'flex',
             alignItems: 'center',
             border: '1px solid #f1f1f1',
             borderRadius: '8px',
-            padding: '10px 20px',
+            padding: '6px 20px',
             transition: 'all linear 0.2s',
             backgroundColor: 'white',
             color: 'black',
 
             img: {
-                width: '50px',
+                width: '35px',
                 height: 'auto',
                 marginRight: '20px'
             },
@@ -43,7 +60,11 @@ export const MainField = styled.div(props => ({
     },
 
     '@media (max-width: 1300px)': {
-        width: '100%'
+        width: '100%',
+
+        ul: {
+            width: '100%'
+        }
     },
 
     '@media (max-width: 500px)': {

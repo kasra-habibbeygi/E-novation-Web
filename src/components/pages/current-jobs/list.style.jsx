@@ -6,6 +6,10 @@ export const MainField = styled.div({
     gap: '20px',
     flexWrap: 'wrap',
 
+    svg: {
+        width: '23%'
+    },
+
     div: {
         width: '23%',
         borderRadius: '6px',
@@ -31,17 +35,29 @@ export const MainField = styled.div({
     '@media (max-width: 1300px)': {
         div: {
             width: '31%'
+        },
+
+        svg: {
+            width: '31%'
         }
     },
 
     '@media (max-width: 800px)': {
         div: {
             width: '46%'
+        },
+
+        svg: {
+            width: '46%'
         }
     },
 
     '@media (max-width: 600px)': {
         div: {
+            width: '100%'
+        },
+
+        svg: {
             width: '100%'
         }
     }

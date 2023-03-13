@@ -17,7 +17,7 @@ import { GetSpecificJobsMessages } from '../api-request/jobs/messages';
 
 const Dashboard = () => {
     const router = useRouter();
-    const [tabsStatus, setTabsStatus] = useState('photoAlbum');
+    const [tabsStatus, setTabsStatus] = useState('jobsProgress');
     const [jobsInfo, setJobsInfo] = useState({});
 
     useEffect(() => {
@@ -42,16 +42,16 @@ const Dashboard = () => {
                     </div>
                     <div className='right_field'>
                         <Button
-                            text='Photo Album'
-                            borderType='rounded'
-                            extraClass={tabsStatus === 'photoAlbum' && 'active'}
-                            clickHandler={() => tabsStatusHanler('photoAlbum')}
-                        />
-                        <Button
                             text='Job Progress'
                             borderType='rounded'
                             extraClass={tabsStatus === 'jobsProgress' && 'active'}
                             clickHandler={() => tabsStatusHanler('jobsProgress')}
+                        />
+                        <Button
+                            text='Photo Album'
+                            borderType='rounded'
+                            extraClass={tabsStatus === 'photoAlbum' && 'active'}
+                            clickHandler={() => tabsStatusHanler('photoAlbum')}
                         />
                         <Button
                             text='Documents'

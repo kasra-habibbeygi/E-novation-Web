@@ -6,6 +6,8 @@ import { authStateHandler, infoHandler } from '@/src/state-manager/reducers/user
 
 // Assets
 import { AuthField } from './form.style';
+import ViewEye from '@/src/assets/images/icons/view.svg';
+import HideEye from '@/src/assets/images/icons/hide.svg';
 
 // Component
 import Input from '../../form-group/input';
@@ -16,12 +18,14 @@ import { Errors } from '@/src/utils/constasts';
 
 // API
 import { LoginApi } from '@/src/api-request/auth';
+import Image from 'next/image';
 
 const LoginForm = () => {
     const [errorText, setErrorText] = useState('');
     const dispatch = useDispatch();
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [passwordType, setPasswordType] = useState('show');
     const [inputValues, setInputValues] = useState({
         email: '',
         password: ''
@@ -64,14 +68,22 @@ const LoginForm = () => {
                 valueGetter={inputValueHandler}
                 value={inputValues.email}
             />
-            <Input
-                label='Password'
-                name='password'
-                placeholder='Please enter your password'
-                type='password'
-                valueGetter={inputValueHandler}
-                value={inputValues.password}
-            />
+            <div className='password_field'>
+                <Image
+                    src={passwordType === 'show' ? ViewEye : HideEye}
+                    alt=''
+                    width={50}
+                    onClick={() => setPasswordType(passwordType === 'show' ? 'hide' : 'show')}
+                />
+                <Input
+                    label='Password'
+                    name='password'
+                    placeholder='Please enter your password'
+                    type={passwordType === 'show' ? 'text' : 'password'}
+                    valueGetter={inputValueHandler}
+                    value={inputValues.password}
+                />
+            </div>
             <Button text='Login' loading={loading} color='warning' clickHandler={submitHandler} />
             <p className='alerts'>{errorText}</p>
         </AuthField>

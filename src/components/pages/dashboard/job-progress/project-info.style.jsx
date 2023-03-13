@@ -11,8 +11,6 @@ export const MainField = styled.section({
         display: 'flex',
         flexDirection: 'column',
         gap: '15px',
-        overflow: 'auto',
-        maxHeight: '500px',
         paddingRight: '20px',
 
         li: {
@@ -40,8 +38,15 @@ export const MainField = styled.section({
     },
 
     '@media (max-width: 500px)': {
-        p: {
-            fontSize: '0.8rem'
+        ul: {
+            li: {
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+
+                p: {
+                    fontSize: '0.8rem'
+                }
+            }
         }
     }
 });

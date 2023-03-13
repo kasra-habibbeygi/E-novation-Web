@@ -154,7 +154,8 @@ const ProjectList = ({ jobsInfo }) => {
     };
 
     return (
-        <MainField>
+        <MainField state={jobsInfo.state}>
+            <div className='progress_bar'></div>
             <ul>{cardProvider(jobsInfo.state)}</ul>
         </MainField>
     );

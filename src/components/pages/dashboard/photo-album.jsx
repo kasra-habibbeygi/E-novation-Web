@@ -51,7 +51,7 @@ const PhotoAlbum = () => {
                 <div className='layout'></div>
                 <div className='content'>
                     <Image src={specificInfo.img} alt='' width={800} height={500} />
-                    <p>{specificInfo?.description}</p>
+                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
                     <Button text='Close' clickHandler={() => setInfoModalStatus(false)} color='danger' />
                 </div>
             </ModalField>

@@ -8,6 +8,7 @@ import Image from 'next/image';
 // Assets
 import { UserAsideField, Layout } from './user-aside.style';
 import AvatarImg from '../../assets/images/icons/avatar.svg';
+import SimpleLogo from '../../assets/images/simple-logo.png';
 
 // component
 import EmptyField from '../template/empty-field';
@@ -50,7 +51,9 @@ const UserAside = () => {
                     {messagesList.length ? (
                         messagesList.map(item => (
                             <div className='message' key={`aside_messages_field_${item.id}`}>
-                                <Image src={AvatarImg} alt='' width={100} />
+                                <span className='message_logo'>
+                                    <Image src={SimpleLogo} alt='' width={100} />
+                                </span>
                                 <div>
                                     <b>E-novation Admin</b>
                                     <p>{item.comment}</p>

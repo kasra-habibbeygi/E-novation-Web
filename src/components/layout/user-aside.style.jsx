@@ -76,10 +76,6 @@ export const UserAsideField = styled.aside(props => ({
             marginBottom: '20px'
         },
 
-        img: {
-            width: '50px'
-        },
-
         '& .message': {
             display: 'flex',
             alignItems: 'center',
@@ -87,7 +83,7 @@ export const UserAsideField = styled.aside(props => ({
 
             div: {
                 width: '100%',
-                marginLeft: '30px',
+                marginLeft: '20px',
                 color: 'black',
                 backgroundColor: 'white',
                 borderRadius: '7px',
@@ -126,6 +122,22 @@ export const UserAsideField = styled.aside(props => ({
                 width: '100%',
                 color: '#7487ff'
             }
+        }
+    },
+
+    '& .message_logo': {
+        width: '70px',
+        height: '55px',
+        borderRadius: '50px',
+        background: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '10px',
+
+        img: {
+            width: '100%',
+            height: 'auto'
         }
     },
 

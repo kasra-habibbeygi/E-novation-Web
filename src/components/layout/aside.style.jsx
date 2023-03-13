@@ -25,6 +25,12 @@ export const AsideField = styled.aside(props => ({
             justifyContent: 'center',
             padding: '15px 0',
             transition: 'all linear 0.15s',
+            flexDirection: 'column',
+            gap: '10px',
+            fontSize: '0.8rem',
+            color: 'white',
+            fontWeight: 'bold',
+            textAlign: 'center',
 
             '&:hover': {
                 backgroundColor: '#ffffff3d'

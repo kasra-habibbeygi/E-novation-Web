@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const MainField = styled.div({
     display: 'flex',
-    alignItems: 'center',
     gap: '20px',
     flexWrap: 'wrap',
 
@@ -12,11 +11,15 @@ export const MainField = styled.div({
         backgroundColor: 'white',
         textAlign: 'center',
         padding: '15px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
 
         h3: {
-            fontWeight: 'normal',
+            fontWeight: '500',
             marginBottom: '15px',
-            fontSize: '2rem'
+            fontSize: '1.3rem'
         },
 
         p: {
