@@ -146,15 +146,15 @@ const ProjectList = ({ jobsInfo, isLoaded }) => {
     const cardProvider = status => {
         return isLoaded ? (
             <>
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
-                <CardSkeleton height='50' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
             </>
         ) : (
             jobsInfoArr.map((item, index) => (
