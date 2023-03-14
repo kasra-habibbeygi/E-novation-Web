@@ -42,14 +42,14 @@ export const MainField = styled.section({
     },
 
     '@media (max-width: 1300px)': {
-        width: '100%'
+        width: '100%',
+        borderRadius: '0 8px 8px 8px'
     },
 
     '@media (max-width: 500px)': {
         ul: {
             li: {
-                flexDirection: 'column',
-                alignItems: 'flex-start',
+                flexWrap: 'wrap',
 
                 p: {
                     fontSize: '0.8rem'

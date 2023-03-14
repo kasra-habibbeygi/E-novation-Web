@@ -47,7 +47,11 @@ const PhotoAlbum = () => {
                     </>
                 ) : albumList.length ? (
                     albumList.map(item => (
-                        <Card background={item.img} onClick={() => infoModalStatusHandler(item)} key={`album_ard_${item.id}`}>
+                        <Card
+                            background={item.img.replace('/media', ':8001/media')}
+                            onClick={() => infoModalStatusHandler(item)}
+                            key={`album_ard_${item.id}`}
+                        >
                             <div>
                                 <Image src={Share} alt='' width={50} />
                             </div>
@@ -58,9 +62,9 @@ const PhotoAlbum = () => {
                 )}
             </MainField>
             <ModalField status={infoModalStatus}>
-                <div className='layout'></div>
+                <div className='layout' onClick={() => setInfoModalStatus(false)}></div>
                 <div className='content'>
-                    <Image src={specificInfo.img} alt='' width={800} height={500} />
+                    <Image src={specificInfo?.img?.replace('/media', ':8001/media')} alt='' width={1500} height={1000} />
                     <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
                     <Button text='Close' clickHandler={() => setInfoModalStatus(false)} color='danger' />
                 </div>

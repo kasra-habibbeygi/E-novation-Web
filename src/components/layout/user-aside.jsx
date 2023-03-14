@@ -4,6 +4,7 @@ import { infoHandler } from '@/src/state-manager/reducers/user';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import ContentLoader from 'react-content-loader';
 
 // Assets
 import { UserAsideField, Layout } from './user-aside.style';
@@ -12,7 +13,6 @@ import SimpleLogo from '../../assets/images/simple-logo.png';
 
 // component
 import EmptyField from '../template/empty-field';
-import CardSkeleton from '../skeleton/card';
 
 // API
 import { GetJobsMessages } from '../../api-request/jobs/messages';
@@ -53,9 +53,14 @@ const UserAside = () => {
                     <header>Messages</header>
                     {isLoaded ? (
                         <div className='loader_field'>
-                            <CardSkeleton height='25' background='#212e81' foregroundColor='#3d4a9e' />
-                            <CardSkeleton height='25' background='#212e81' foregroundColor='#3d4a9e' />
-                            <CardSkeleton height='25' background='#212e81' foregroundColor='#3d4a9e' />
+                            <ContentLoader speed={1} height={120} backgroundColor='#212e81' foregroundColor='#3d4a9e'>
+                                <circle cx='31' cy='65' r='30' />
+                                <rect x='78' y='14' rx='5' ry='5' width='257' height='105' />
+                            </ContentLoader>
+                            <ContentLoader speed={1} height={120} backgroundColor='#212e81' foregroundColor='#3d4a9e'>
+                                <circle cx='31' cy='65' r='30' />
+                                <rect x='78' y='14' rx='5' ry='5' width='257' height='105' />
+                            </ContentLoader>
                         </div>
                     ) : messagesList.length ? (
                         messagesList.map(item => (

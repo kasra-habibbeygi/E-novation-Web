@@ -49,16 +49,16 @@ export const DashboardMainField = styled.section(props => ({
             top: '-39px',
 
             button: {
-                backgroundColor: 'white',
                 borderRadius: '5px 5px 0 0',
-                color: 'black',
                 fontSize: '0.9rem',
                 fontWeight: '600',
                 width: '110px',
+                background: props.theme.colors.primary,
+                color: 'white',
 
                 '&.active': {
-                    background: props.theme.colors.primary,
-                    color: 'white'
+                    backgroundColor: 'white',
+                    color: 'black'
                 }
             }
         }

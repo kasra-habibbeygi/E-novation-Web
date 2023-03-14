@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap'); */
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../font/CalibriBold.ttf) format("truetype");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../font/CalibriLight.ttf) format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(../../font/CalibriRegular.ttf) format("truetype");
+    font-weight: 300;
+}
+
 
 * {
     box-sizing: border-box;
@@ -98,6 +117,6 @@ input {
     font-family: 'Open Sans';
 }
 
-input::placeholder{
+input::placeholder {
     font-family: 'Open Sans';
 }

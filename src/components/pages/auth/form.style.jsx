@@ -14,13 +14,16 @@ export const AuthField = styled.div(props => ({
         display: 'flex',
         alignItems: 'center',
 
+        input: {
+            paddingRight: '50px'
+        },
+
         img: {
             position: 'absolute',
-            background: 'white',
             width: '22px',
             height: '36px',
             bottom: '33px',
-            right: '6px',
+            right: '16px',
             cursor: 'pointer'
         }
     }

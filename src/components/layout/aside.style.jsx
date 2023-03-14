@@ -29,7 +29,6 @@ export const AsideField = styled.aside(props => ({
             gap: '10px',
             fontSize: '0.8rem',
             color: 'white',
-            fontWeight: 'bold',
             textAlign: 'center',
 
             '&:hover': {

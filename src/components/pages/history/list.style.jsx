@@ -4,7 +4,6 @@ export const MainField = styled.ul(props => ({
     listStyle: 'none',
     display: 'flex',
     flexWrap: 'wrap',
-    alignItems: 'center',
     gap: '20px',
 
     svg: {
@@ -50,9 +49,19 @@ export const MainField = styled.ul(props => ({
         }
     },
 
-    '@media (max-width: 800px)': {
+    '@media (max-width: 1300px)': {
         li: {
-            width: '100%'
+            width: '100%',
+            flexDirection: 'column'
+        },
+
+        h3: {
+            border: 'none',
+            borderBottom: `1px solid ${props.theme.colors.secondary}`,
+            padding: '0',
+            margin: '0',
+            paddingBottom: '15px',
+            marginBottom: '15px'
         },
 
         svg: {
@@ -65,12 +74,10 @@ export const MainField = styled.ul(props => ({
             flexDirection: 'column',
 
             h3: {
-                margin: '0',
-                padding: '0',
-                borderRight: 'none',
-                borderBottom: `2px solid ${props.theme.colors.secondary}`,
-                paddingBottom: '20px',
-                marginBottom: '20px'
+                fontSize: '1rem'
+            },
+            p: {
+                fontSize: '0.8rem'
             }
         }
     }

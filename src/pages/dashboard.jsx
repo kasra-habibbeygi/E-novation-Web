@@ -41,7 +41,7 @@ const Dashboard = () => {
                 <header>
                     <div className='left_field'>
                         <h3>Current Project</h3>
-                        <small>Victoria Car Platform</small>
+                        <small>{jobsInfo.name}</small>
                     </div>
                     <div className='right_field'>
                         <Button

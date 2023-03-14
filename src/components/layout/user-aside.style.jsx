@@ -24,7 +24,7 @@ export const UserAsideField = styled.aside(props => ({
     },
 
     h3: {
-        fontSize: '2rem',
+        fontSize: '1.5rem',
         fontWeight: 'bold',
         color: 'white',
         marginTop: '20px',
@@ -61,7 +61,8 @@ export const UserAsideField = styled.aside(props => ({
 
             b: {
                 fontSize: '1.5rem',
-                color: props.theme.colors.primary
+                color: props.theme.colors.primary,
+                fontWeight: '400'
             }
         }
     },
@@ -145,6 +146,13 @@ export const UserAsideField = styled.aside(props => ({
         display: 'flex',
         flexDirection: 'column',
         gap: '10px'
+    },
+    svg: {
+        width: '100%',
+
+        defs: {
+            width: '100%'
+        }
     },
 
     '@media (max-width: 1200px)': {

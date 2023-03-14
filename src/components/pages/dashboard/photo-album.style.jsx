@@ -82,7 +82,7 @@ export const ModalField = styled.div(props => ({
     overflow: 'auto',
     opacity: props.status ? '1' : '0',
     pointerEvents: props.status ? 'initial' : 'none',
-    zIndex: '11',
+    zIndex: '15',
 
     '& .layout': {
         width: '100%',
@@ -106,7 +106,7 @@ export const ModalField = styled.div(props => ({
 
     img: {
         width: '100%',
-        height: '500px',
+        height: 'auto',
         borderRadius: '10px',
         marginBottom: '30px'
     },
