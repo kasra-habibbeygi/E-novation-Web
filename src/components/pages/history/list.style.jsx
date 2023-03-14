@@ -15,13 +15,14 @@ export const MainField = styled.ul(props => ({
         width: '48%',
         backgroundColor: 'white',
         padding: '20px',
-        borderRadius: '8px'
+        borderRadius: '8px',
+        flexDirection: 'column'
     },
 
     h3: {
-        borderRight: `2px solid ${props.theme.colors.secondary}`,
-        paddingRight: '20px',
-        marginRight: '20px'
+        borderBottom: `1px solid ${props.theme.colors.secondary}`,
+        paddingBottom: '15px',
+        marginBottom: '15px'
     },
 
     div: {
@@ -51,17 +52,7 @@ export const MainField = styled.ul(props => ({
 
     '@media (max-width: 1300px)': {
         li: {
-            width: '100%',
-            flexDirection: 'column'
-        },
-
-        h3: {
-            border: 'none',
-            borderBottom: `1px solid ${props.theme.colors.secondary}`,
-            padding: '0',
-            margin: '0',
-            paddingBottom: '15px',
-            marginBottom: '15px'
+            width: '100%'
         },
 
         svg: {

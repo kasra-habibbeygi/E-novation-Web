@@ -19,6 +19,7 @@ export const MainField = styled.div({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
+        height: '300px',
 
         h3: {
             fontWeight: '500',
@@ -27,7 +28,8 @@ export const MainField = styled.div({
         },
 
         p: {
-            fontSize: '0.9rem'
+            fontSize: '0.9rem',
+            overflow: 'auto'
         },
 
         button: {

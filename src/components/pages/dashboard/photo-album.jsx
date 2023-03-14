@@ -66,6 +66,9 @@ const PhotoAlbum = () => {
                 <div className='content'>
                     <Image src={specificInfo?.img?.replace('/media', ':8001/media')} alt='' width={1500} height={1000} />
                     <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
+                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
+                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
+                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
                     <Button text='Close' clickHandler={() => setInfoModalStatus(false)} color='danger' />
                 </div>
             </ModalField>

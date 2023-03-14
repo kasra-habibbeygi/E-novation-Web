@@ -29,10 +29,10 @@ const CurrentJobsList = () => {
     return (
         <MainField>
             {isLoaded ? <>
-                <CardSkeleton height='190'/>
-                <CardSkeleton height='190'/>
-                <CardSkeleton height='190'/>    
-                <CardSkeleton height='190'/>
+                <CardSkeleton height='200'/>
+                <CardSkeleton height='200'/>
+                <CardSkeleton height='200'/>    
+                <CardSkeleton height='200'/>
             </> : openJobsList.length
                 ? openJobsList.map(item => (
                     <div key={`current_jobs_card_${item.id}`}>
