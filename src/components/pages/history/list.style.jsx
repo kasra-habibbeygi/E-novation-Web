@@ -22,7 +22,8 @@ export const MainField = styled.ul(props => ({
     h3: {
         borderBottom: `1px solid ${props.theme.colors.secondary}`,
         paddingBottom: '15px',
-        marginBottom: '15px'
+        marginBottom: '15px',
+        fontSize: '1.2rem'
     },
 
     div: {
@@ -34,7 +35,7 @@ export const MainField = styled.ul(props => ({
     p: {
         flex: '1 0 45%',
         color: '#8a8a8a',
-        fontSize: '0.9rem',
+        fontSize: '1.1rem',
         display: 'flex',
         gap: '5px',
 
@@ -46,7 +47,8 @@ export const MainField = styled.ul(props => ({
 
         b: {
             fontWeight: 'normal',
-            display: 'block'
+            display: 'block',
+            fontSize: '1.1rem'
         }
     },
 

@@ -20,7 +20,7 @@ export const MainField = styled.div({
         h3: {
             fontWeight: 'normal',
             marginBottom: '15px',
-            fontSize: '1.5rem'
+            fontSize: '1.6rem'
         },
 
         button: {

@@ -26,5 +26,9 @@ export const AuthField = styled.div(props => ({
             right: '16px',
             cursor: 'pointer'
         }
+    },
+
+    button: {
+        fontSize: '1.2rem'
     }
 }));

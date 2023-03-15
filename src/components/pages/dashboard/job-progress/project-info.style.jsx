@@ -30,13 +30,13 @@ export const MainField = styled.section({
             transition: 'all linear 0.2s',
 
             p: {
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 fontWeight: '500'
             },
 
             span: {
                 color: '#6d6d6d',
-                fontSize: '0.9rem'
+                fontSize: '1rem'
             }
         }
     },
@@ -52,7 +52,7 @@ export const MainField = styled.section({
                 flexWrap: 'wrap',
 
                 p: {
-                    fontSize: '0.8rem'
+                    fontSize: '0.9rem'
                 }
             }
         }

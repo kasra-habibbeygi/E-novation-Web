@@ -159,11 +159,16 @@ const ProjectList = ({ jobsInfo, isLoaded }) => {
         ) : (
             jobsInfoArr.map((item, index) => (
                 <li
-                    className={status === index + 1 ? 'active' : index + 1 < status ? 'deactive' : 'noraml'}
+                    className={
+                        status === jobsInfoArr.length - index ? 'active' : jobsInfoArr.length - index < status ? 'deactive' : 'noraml'
+                    }
                     key={`jobs_status_${index + 1}`}
                 >
                     <Image
-                        src={ImageHandler(item.icon, status === index + 1 ? 'yellow' : index + 1 < status ? 'gray' : 'darkYellow')}
+                        src={ImageHandler(
+                            item.icon,
+                            status === jobsInfoArr.length - index ? 'yellow' : jobsInfoArr.length - index < status ? 'gray' : 'darkYellow'
+                        )}
                         alt=''
                         width={80}
                     />

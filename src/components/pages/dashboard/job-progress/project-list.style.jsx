@@ -22,7 +22,7 @@ export const MainField = styled.div(props => ({
             backgroundColor: props.theme.colors.primary,
             borderRadius: '50px',
             position: 'absolute',
-            top: '0',
+            bottom: '0',
             left: ''
         }
     },
@@ -82,7 +82,7 @@ export const MainField = styled.div(props => ({
 
     '@media (max-width: 500px)': {
         p: {
-            fontSize: '0.8rem'
+            fontSize: '0.9rem'
         },
 
         img: {

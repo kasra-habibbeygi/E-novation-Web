@@ -56,11 +56,11 @@ export const UserAsideField = styled.aside(props => ({
             padding: '20px 15px',
 
             p: {
-                fontSize: '0.9rem'
+                fontSize: '1rem'
             },
 
             b: {
-                fontSize: '1.5rem',
+                fontSize: '1.6rem',
                 color: props.theme.colors.primary,
                 fontWeight: '400'
             }
@@ -74,7 +74,8 @@ export const UserAsideField = styled.aside(props => ({
             width: 'max-content',
             borderBottom: '1px solid white',
             color: 'white',
-            marginBottom: '20px'
+            marginBottom: '20px',
+            fontSize: '1.1rem'
         },
 
         '& .message': {
@@ -107,18 +108,19 @@ export const UserAsideField = styled.aside(props => ({
 
                 small: {
                     color: '#919191',
-                    marginTop: '10px'
+                    marginTop: '10px',
+                    fontSize: '0.9rem'
                 }
             },
 
             p: {
-                fontSize: '0.8rem',
+                fontSize: '0.9rem',
                 textAlign: 'left',
                 marginTop: '5px'
             },
 
             b: {
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 textAlign: 'left',
                 width: '100%',
                 color: '#7487ff'

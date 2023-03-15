@@ -21,9 +21,9 @@ import { LoginApi } from '@/src/api-request/auth';
 import Image from 'next/image';
 
 const LoginForm = () => {
-    const [errorText, setErrorText] = useState('');
     const dispatch = useDispatch();
     const router = useRouter();
+    const [errorText, setErrorText] = useState('');
     const [loading, setLoading] = useState(false);
     const [passwordType, setPasswordType] = useState('hide');
     const [inputValues, setInputValues] = useState({
@@ -52,7 +52,11 @@ const LoginForm = () => {
                     dispatch(infoHandler(res.data));
                     router.push('/current-jobs');
                 })
-                .catch(() => {})
+                .catch(e => {
+                    if (e.response.status === 409) {
+                        setErrorText('Email or password is invalid !');
+                    }
+                })
                 .finally(() => {
                     setLoading(false);
                 });

@@ -22,7 +22,7 @@ export const DashboardMainField = styled.section(props => ({
             gap: '15px',
 
             button: {
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 width: 'max-content',
                 padding: '10px 25px',
                 color: 'black',
@@ -50,7 +50,7 @@ export const DashboardMainField = styled.section(props => ({
 
             button: {
                 borderRadius: '5px 5px 0 0',
-                fontSize: '0.9rem',
+                fontSize: '1rem',
                 fontWeight: '600',
                 width: '110px',
                 background: props.theme.colors.primary,
@@ -125,7 +125,7 @@ export const DashboardMainField = styled.section(props => ({
 
                 button: {
                     padding: '10px 5px',
-                    fontSize: '0.75rem',
+                    fontSize: '0.8rem',
                     fontWeight: '600'
                 }
             }
@@ -140,7 +140,7 @@ export const DashboardMainField = styled.section(props => ({
                 top: '-35px',
 
                 button: {
-                    fontSize: '0.7rem',
+                    fontSize: '0.9rem',
                     width: '100px'
                 }
             }

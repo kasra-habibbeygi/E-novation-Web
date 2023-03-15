@@ -19,7 +19,8 @@ export const AsideField = styled.aside(props => ({
             width: '100%'
         },
 
-        a: {
+        'a , div': {
+            cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -27,19 +28,36 @@ export const AsideField = styled.aside(props => ({
             transition: 'all linear 0.15s',
             flexDirection: 'column',
             gap: '10px',
-            fontSize: '0.8rem',
+            fontSize: '0.9rem',
             color: 'white',
             textAlign: 'center',
+            lineHeight: '17px',
 
             '&:hover': {
                 backgroundColor: '#ffffff3d'
             }
+        },
+
+        '& .mobile_view': {
+            display: 'none'
         }
     },
 
     img: {
         width: '27px',
         height: 'auto'
+    },
+
+    '@media (max-width: 1050px)': {
+        ul: {
+            '& .web_view': {
+                display: 'none'
+            },
+
+            '& .mobile_view': {
+                display: 'flex'
+            }
+        }
     },
 
     '@media (max-width: 500px)': {
@@ -52,7 +70,7 @@ export const AsideField = styled.aside(props => ({
 
         ul: {
             a: {
-                fontSize: '0.7rem'
+                fontSize: '0.8rem'
             }
         }
     }
