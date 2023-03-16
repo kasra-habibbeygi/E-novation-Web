@@ -7,11 +7,12 @@ export const MainField = styled.div({
     width: '100%',
 
     h3: {
-        fontSize: '1.7rem'
+        fontSize: '1.7rem',
+        marginBottom: '20px'
     },
 
     p: {
-        marginTop: '20px',
+        marginTop: '10px',
         fontSize: '1.1rem',
         lineHeight: '30px'
     }

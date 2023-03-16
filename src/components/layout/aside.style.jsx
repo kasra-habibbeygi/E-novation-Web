@@ -55,7 +55,7 @@ export const AsideField = styled.aside(props => ({
             },
 
             '& .mobile_view': {
-                display: 'flex'
+                display: 'block'
             }
         }
     },

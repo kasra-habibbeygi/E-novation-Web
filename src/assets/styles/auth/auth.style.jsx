@@ -26,6 +26,7 @@ export const AuthField = styled.div({
         boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
         borderRadius: '6px',
         overflow: 'hidden',
+        height: 'max-content',
 
         '& .right_field': {
             width: '100%',
@@ -34,8 +35,6 @@ export const AuthField = styled.div({
     },
 
     '@media (max-width: 500px)': {
-        height: 'max-content',
-
         '& .right_field': {
             padding: '40px 20px',
 
@@ -52,6 +51,10 @@ export const ImageField = styled.div(props => ({
     width: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'right',
+
+    '@media (max-width: 900px)': {
+        height: '400px'
+    },
 
     '@media (max-width: 500px)': {
         height: '200px'
