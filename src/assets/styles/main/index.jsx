@@ -137,7 +137,7 @@ export const DashboardMainField = styled.section(props => ({
 
         '& .content_field': {
             '& .tabs': {
-                top: '-35px',
+                top: '-38px',
 
                 button: {
                     fontSize: '0.9rem',
