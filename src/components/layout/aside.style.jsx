@@ -7,6 +7,7 @@ export const AsideField = styled.aside(props => ({
     position: 'fixed',
     top: '70px',
     paddingTop: '35px',
+    overflow: 'auto',
 
     ul: {
         listStyle: 'none',
