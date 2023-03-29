@@ -23,12 +23,14 @@ const Dashboard = () => {
     const [jobsProgresstabsStatus, setJobsProgressTabsStatus] = useState(0);
 
     useEffect(() => {
-        GetSpecificJobsMessages(router.query.jobId)
-            .then(res => {
-                setJobsInfo(res);
-                setIsloaded(false);
-            })
-            .catch(() => {});
+        if (router.query.jobId) {
+            GetSpecificJobsMessages(router.query.jobId)
+                .then(res => {
+                    setJobsInfo(res);
+                    setIsloaded(false);
+                })
+                .catch(() => {});
+        }
     }, [router.query.jobId]);
 
     const tabsStatusHanler = status => {

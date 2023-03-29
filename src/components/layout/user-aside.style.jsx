@@ -157,38 +157,167 @@ export const UserAsideField = styled.aside(props => ({
         }
     },
 
+    '& .nav_list': {
+        display: 'none'
+    },
+
+    '& .copy_right': {
+        display: 'none'
+    },
+
     '@media (max-width: 1200px)': {
         right: props.status ? '0' : '-400px',
         transition: 'all 0.5s cubic-bezier(0, 0, 0.2, 1) 0s'
     },
 
-    '@media (max-width: 500px)': {
-        width: '320px',
-        padding: '50px 12px',
+    '@media (max-width: 900px)': {
+        padding: '30px 20px',
+        width: '300px',
+
+        '& .avatar': {
+            width: '80px',
+            minHeight: '80px',
+            margin: 'unset',
+            borderRadius: '15px'
+        },
+
+        button: {
+            display: 'none'
+        },
 
         h3: {
-            fontSize: '1.4rem'
+            fontSize: '1.4rem',
+            textAlign: 'left',
+            display: 'flex',
+            flexDirection: 'column',
+            marginTop: '10px',
+            fontWeight: 'normal'
         },
 
         '& .user_info_field': {
-            paddingBottom: '30px',
+            width: '100%',
+            background: 'transparent',
+            position: 'unset',
+            paddingBottom: '0',
 
             '& .content_field': {
+                marginTop: '15px',
+                backgroundColor: 'transparent',
+                borderRadius: '8px',
+                display: 'block',
+                textAlign: 'left',
+                padding: '0',
+
                 p: {
-                    fontSize: '0.8rem'
+                    fontSize: '1rem',
+                    color: 'white'
+                },
+
+                b: {
+                    fontSize: '1rem',
+                    color: 'white',
+                    marginLeft: '5px'
+                },
+
+                div: {
+                    width: '100%',
+                    backgroundColor: 'red',
+                    display: 'flex',
+                    alignItems: 'center',
+                    background: '#ffffff6b',
+                    marginBottom: '5px',
+                    padding: '5px 10px',
+                    borderRadius: '8px'
                 }
             }
         },
 
+        '& .seprator': {
+            width: '87%',
+            display: 'block',
+            margin: '15px auto',
+            height: '1px',
+            backgroundColor: 'white'
+        },
+
         '& .messages_field': {
+            display: 'none'
+        },
+
+        '& .nav_list': {
+            display: 'block',
+            listStyle: 'none',
+
             img: {
-                width: '40px'
+                width: '20px'
             },
 
-            '& .message': {
-                div: {
-                    marginLeft: '15px'
+            a: {
+                display: 'flex',
+                alignItems: 'center',
+                color: 'white',
+                gap: '10px'
+            }
+        },
+
+        '& .copy_right': {
+            display: 'block',
+            position: 'absolute',
+            bottom: '10px',
+            left: '0',
+            width: '100%',
+            color: 'white',
+            textAlign: 'center'
+        }
+    },
+
+    '@media (max-width: 400px)': {
+        padding: '15px 20px',
+        width: '250px',
+
+        h3: {
+            fontSize: '1.2rem'
+        },
+
+        '& .avatar': {
+            width: '60px',
+            minHeight: '60px'
+        },
+
+        '& .nav_list': {
+            img: {
+                width: '18px',
+                height: 'auto'
+            },
+
+            a: {
+                padding: '10px 0',
+                fontSize: '0.9rem'
+            }
+        },
+
+        '& .user_info_field': {
+            '& .content_field': {
+                marginTop: '5px',
+
+                p: {
+                    fontSize: '0.9rem'
+                },
+
+                b: {
+                    fontSize: '0.9rem'
                 }
+            }
+        },
+
+        '& .copy_right': {
+            small: {
+                fontSize: '0.7rem',
+                padding: '0 10px'
+            },
+
+            p: {
+                fontSize: '0.9rem'
             }
         }
     }
