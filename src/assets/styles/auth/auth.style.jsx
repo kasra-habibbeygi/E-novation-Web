@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const AuthField = styled.div({
+export const AuthField = styled.div(props => ({
     display: 'flex',
     height: '100vh',
 
@@ -19,18 +19,47 @@ export const AuthField = styled.div({
         }
     },
 
+    '& .login_footer': {
+        display: 'none',
+        position: 'absolute',
+        bottom: '10px',
+        width: '100%',
+
+        p: {
+            color: 'white',
+            width: '100%',
+            textAlign: 'center',
+            fontWeight: 'bold'
+        },
+
+        small: {
+            color: 'white',
+            width: '100%',
+            textAlign: 'center',
+            display: 'block'
+        }
+    },
+
     '@media (max-width: 900px)': {
         flexDirection: 'column',
-        width: '90%',
-        margin: '30px auto',
-        boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px',
-        borderRadius: '6px',
-        overflow: 'hidden',
-        height: 'max-content',
+        width: '100%',
 
         '& .right_field': {
             width: '100%',
-            padding: '40px 50px'
+            height: '100%',
+            backgroundColor: props.theme.colors.primary
+        },
+
+        label: {
+            display: 'none'
+        },
+
+        '& .login_footer': {
+            display: 'block'
+        },
+
+        '& .mb-0': {
+            marginBottom: '10px'
         }
     },
 
@@ -43,7 +72,7 @@ export const AuthField = styled.div({
             }
         }
     }
-});
+}));
 
 export const ImageField = styled.div(props => ({
     background: `url(${props.image})`,
@@ -53,10 +82,6 @@ export const ImageField = styled.div(props => ({
     backgroundPosition: 'right',
 
     '@media (max-width: 900px)': {
-        height: '400px'
-    },
-
-    '@media (max-width: 500px)': {
-        height: '200px'
+        display: 'none'
     }
 }));

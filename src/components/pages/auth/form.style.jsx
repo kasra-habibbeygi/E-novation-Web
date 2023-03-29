@@ -30,5 +30,13 @@ export const AuthField = styled.div(props => ({
 
     button: {
         fontSize: '1.2rem'
+    },
+
+    '@media (max-width: 900px)': {
+        '& .password_field': {
+            img: {
+                bottom: '12px'
+            }
+        }
     }
 }));

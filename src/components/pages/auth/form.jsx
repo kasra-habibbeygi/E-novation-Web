@@ -44,8 +44,13 @@ const LoginForm = () => {
         } else if (!validator.isEmail(inputValues.email)) {
             setErrorText(Errors.IS_NOT_EMAIL);
         } else {
+            const lowerCaseInputValues = {
+                email: inputValues.email.toLocaleLowerCase(),
+                password: inputValues.password
+            };
+
             setLoading(true);
-            LoginApi(inputValues)
+            LoginApi(lowerCaseInputValues)
                 .then(res => {
                     localStorage.setItem('userInfo', JSON.stringify(res.data));
                     dispatch(authStateHandler(true));
@@ -71,6 +76,7 @@ const LoginForm = () => {
                 placeholder='Please enter your email'
                 valueGetter={inputValueHandler}
                 value={inputValues.email}
+                extraClass='mb-0'
             />
             <div className='password_field'>
                 <Image
@@ -86,6 +92,7 @@ const LoginForm = () => {
                     type={passwordType === 'show' ? 'text' : 'password'}
                     valueGetter={inputValueHandler}
                     value={inputValues.password}
+                    extraClass='mb-0'
                 />
             </div>
             <Button text='Login' loading={loading} color='warning' clickHandler={submitHandler} />
