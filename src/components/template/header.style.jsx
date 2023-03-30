@@ -42,7 +42,8 @@ export const HeaderField = styled.header(props => ({
         },
 
         h3: {
-            fontSize: '.9rem'
+            fontSize: '.8rem',
+            padding: '2px 10px'
         }
     }
 }));

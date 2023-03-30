@@ -35,7 +35,7 @@ export const MainField = styled.ul(props => ({
     p: {
         flex: '1 0 45%',
         color: '#8a8a8a',
-        fontSize: '1.1rem',
+        fontSize: '1rem',
         display: 'flex',
         gap: '5px',
 
@@ -48,7 +48,7 @@ export const MainField = styled.ul(props => ({
         b: {
             fontWeight: 'normal',
             display: 'block',
-            fontSize: '1.1rem'
+            fontSize: '1rem'
         }
     },
 
@@ -62,14 +62,26 @@ export const MainField = styled.ul(props => ({
         }
     },
 
-    '@media (max-width: 400px)': {
+    '@media (max-width: 900px)': {
+        li: {
+            flexDirection: 'column',
+            boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'
+        }
+    },
+
+    '@media (max-width: 600px)': {
         li: {
             flexDirection: 'column',
 
             h3: {
                 fontSize: '1rem'
             },
+
             p: {
+                fontSize: '0.8rem'
+            },
+
+            b: {
                 fontSize: '0.8rem'
             }
         }

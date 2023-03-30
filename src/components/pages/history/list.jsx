@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 // Assets
 import { MainField } from './list.style';
+import Home from '@/src/assets/images/icons/home.svg';
 
 // API
 import { GetHistory } from '@/src/api-request/histroy';
@@ -10,13 +11,20 @@ import { GetHistory } from '@/src/api-request/histroy';
 // Component
 import EmptyField from '../../template/empty-field';
 import CardSkeleton from '../../skeleton/card';
+import RedirectButton from '../../template/redirect-button';
+
+// Hooks
+import useWindowDimensions from '@/src/hooks/get-window-dimensions';
 
 const HistoryList = () => {
     const userId = useSelector(state => state.UserInfo.info.id);
     const [historyList, setHistoryList] = useState([]);
     const [isLoaded, setIsloaded] = useState(true);
+    const [domLoaded, setDomLoaded] = useState(false);
+    const { width } = useWindowDimensions();
 
     useEffect(() => {
+        setDomLoaded(true);
         GetHistory(userId)
             .then(res => {
                 setHistoryList(res);
@@ -29,10 +37,10 @@ const HistoryList = () => {
         <MainField>
             {isLoaded ? (
                 <>
-                    <CardSkeleton height='110' />
-                    <CardSkeleton height='110' />
-                    <CardSkeleton height='110' />
-                    <CardSkeleton height='110' />
+                    <CardSkeleton height='180' />
+                    <CardSkeleton height='180' />
+                    <CardSkeleton height='180' />
+                    <CardSkeleton height='180' />
                 </>
             ) : historyList.length ? (
                 historyList.map(item => (
@@ -65,6 +73,7 @@ const HistoryList = () => {
             ) : (
                 <EmptyField />
             )}
+            {domLoaded && width < 900 && <RedirectButton src='/current-jobs' text='Current Jobs' icon={Home} />}
         </MainField>
     );
 };
