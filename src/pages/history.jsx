@@ -1,19 +1,13 @@
-// Assets
-import { HistoryMainField } from '../assets/styles/main/index';
-
 // Component
 import LayoutProvider from '../components/layout/layout.provider';
 import HistoryList from '../components/pages/history/list';
+import HeaderTemp from '../components/template/header';
 
 const History = () => {
     return (
         <LayoutProvider>
-            <HistoryMainField>
-                <header>
-                    <h3>History</h3>
-                </header>
-                <HistoryList />
-            </HistoryMainField>
+            <HeaderTemp title='History'></HeaderTemp>
+            <HistoryList />
         </LayoutProvider>
     );
 };

@@ -14,11 +14,11 @@ export const LayoutField = styled.main({
         }
     },
 
-    '@media (max-width: 500px)': {
+    '@media (max-width: 900px)': {
         '& .page_content_field': {
-            width: 'calc(100% - 50px)',
-            padding: '10px',
-            marginLeft: '50px'
+            width: '100%',
+            padding: '10px 30px',
+            marginLeft: '0'
         }
     }
 });

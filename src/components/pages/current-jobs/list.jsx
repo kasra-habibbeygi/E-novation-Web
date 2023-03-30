@@ -4,20 +4,28 @@ import Link from 'next/link';
 
 // Assets
 import { MainField } from './list.style';
+import History from '@/src/assets/images/icons/history.svg';
 
 // Component
 import Button from '../../form-group/button';
 import EmptyField from '../../template/empty-field';
+import RedirectButton from '../../template/redirect-button';
 import CardSkeleton from '../../skeleton/card';
 
 // API
 import { GetOpenJobs } from '@/src/api-request/jobs/current';
 
+// Hooks
+import useWindowDimensions from '@/src/hooks/get-window-dimensions';
+
 const CurrentJobsList = () => {
     const [openJobsList, setOpenJobsList] = useState([]);
     const [isLoaded, setIsloaded] = useState(true);
+    const [domLoaded, setDomLoaded] = useState(false);
+    const { width } = useWindowDimensions();
     
     useEffect(() => {
+        setDomLoaded(true);
         GetOpenJobs()
             .then(res => {
                 setIsloaded(false);
@@ -29,10 +37,10 @@ const CurrentJobsList = () => {
     return (
         <MainField>
             {isLoaded ? <>
-                <CardSkeleton height='200'/>
-                <CardSkeleton height='200'/>
-                <CardSkeleton height='200'/>    
-                <CardSkeleton height='200'/>
+                <CardSkeleton height={width > 900 ? '200' : '53'}/>
+                <CardSkeleton height={width > 900 ? '200' : '53'}/>
+                <CardSkeleton height={width > 900 ? '200' : '53'}/>    
+                <CardSkeleton height={width > 900 ? '200' : '53'}/>
             </> : openJobsList.length
                 ? openJobsList.map(item => (
                     <div key={`current_jobs_card_${item.id}`}>
@@ -43,6 +51,7 @@ const CurrentJobsList = () => {
                     </div>
                 ))
                 : <EmptyField />}
+            {domLoaded && width < 900 && <RedirectButton src='/history' text='History' icon={History}/>}
         </MainField>
     );
 };

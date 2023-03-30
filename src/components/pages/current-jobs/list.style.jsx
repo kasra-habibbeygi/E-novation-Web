@@ -42,22 +42,40 @@ export const MainField = styled.div({
         }
     },
 
-    '@media (max-width: 800px)': {
+    '@media (max-width: 900px)': {
         div: {
-            width: '46%'
+            width: '100%',
+            boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+            padding: '10px',
+            margin: '0 30px',
+
+            h3: {
+                marginBottom: '0',
+                fontSize: '1.4rem',
+                textAlign: 'left',
+                paddingLeft: '15px'
+            }
+        },
+
+        a: {
+            display: 'none'
         },
 
         svg: {
-            width: '46%'
+            margin: '0 30px',
+            width: '100%'
         }
     },
 
-    '@media (max-width: 600px)': {
+    '@media (max-width: 500px)': {
         div: {
-            width: '100%'
+            h3: {
+                fontSize: '1rem'
+            }
         },
 
         svg: {
+            margin: '0 30px',
             width: '100%'
         }
     }

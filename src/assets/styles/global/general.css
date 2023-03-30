@@ -118,3 +118,10 @@ input {
 input::placeholder {
     font-family: 'main';
 }
+
+@media only screen and (max-width: 900px) {
+    body,
+    html {
+        background-color: #fff;
+    }
+}
