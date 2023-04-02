@@ -5,6 +5,7 @@ export const MainField = styled.div({
     alignItems: 'center',
     gap: '20px',
     flexWrap: 'wrap',
+    padding: '0 40px 20px 0',
 
     svg: {
         width: '23%'
@@ -13,6 +14,27 @@ export const MainField = styled.div({
     '@media (max-width: 1300px)': {
         svg: {
             width: '30%'
+        }
+    },
+
+    '@media (max-width: 900px)': {
+        overflow: 'auto',
+        height: 'calc(100vh - 200px)',
+        margin: '0 40px 20px 0',
+        padding: '0',
+        paddingRight: '10px',
+
+        '&::-webkit-scrollbar': {
+            width: '5px'
+        },
+
+        '&::-webkit-scrollbar-track': {
+            background: 'transparent'
+        },
+
+        '&::-webkit-scrollbar-thumb': {
+            background: 'rgb(232 232 232)',
+            borderRadius: '50px'
         }
     },
 

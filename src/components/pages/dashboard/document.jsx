@@ -12,8 +12,12 @@ import CardSkeleton from '../../skeleton/card';
 // API
 import { GetJobDocument } from '@/src/api-request/jobs/document';
 
+// Hooks
+import useWindowDimensions from '@/src/hooks/get-window-dimensions';
+
 const Document = () => {
     const router = useRouter();
+    const { width } = useWindowDimensions();
     const [docList, setDocList] = useState([]);
     const [isLoaded, setIsloaded] = useState(true);
 
@@ -36,15 +40,26 @@ const Document = () => {
                     <CardSkeleton height='300' />
                 </>
             ) : docList.length ? (
-                docList.map(item => (
-                    <div key={`doc_card_${item.id}`}>
-                        <h3>{item.name}</h3>
-                        <p>{item.description}</p>
-                        <a href={item.att_file} target='_blank'>
-                            <Button text='View' color='warning' />
-                        </a>
-                    </div>
-                ))
+                width > 900 ? (
+                    docList.map(item => (
+                        <div key={`doc_card_${item.id}`}>
+                            <h3>{item.name}</h3>
+                            <p>{item.description}</p>
+                            <a href={item.att_file} target='_blank'>
+                                <Button text='View' color='warning' />
+                            </a>
+                        </div>
+                    ))
+                ) : (
+                    docList.map(item => (
+                        <div key={`doc_card_${item.id}`}>
+                            <a href={item.att_file} target='_blank'>
+                                <h3>{item.name}</h3>
+                                <p>{item.description}</p>
+                            </a>
+                        </div>
+                    ))
+                )
             ) : (
                 <EmptyField />
             )}

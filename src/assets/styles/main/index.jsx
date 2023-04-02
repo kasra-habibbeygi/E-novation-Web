@@ -142,8 +142,8 @@ export const DashboardMainField = styled.section(props => ({
             '& .right_field': {
                 position: 'absolute',
                 zIndex: '10',
-                top: '350px',
-                right: '-185px',
+                top: '360px',
+                right: '-143px',
                 transform: 'rotate(90deg) translate(-8%)',
                 background: '#F2CA30',
                 height: '50px',
@@ -155,6 +155,8 @@ export const DashboardMainField = styled.section(props => ({
                     background: 'transparent',
                     borderRadius: '0',
                     height: '102%',
+                    fontSize: '0.9rem',
+                    padding: '5px 15px',
 
                     '&.active': {
                         backgroundColor: '#F2F5FA',

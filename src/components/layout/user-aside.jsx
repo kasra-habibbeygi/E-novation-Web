@@ -140,15 +140,15 @@ const UserAside = () => {
                         </Link>
                     </li>
                     <li>
-                        <a href='sms:+61412346781'>
-                            <Image src={SMS} alt='' width={50} />
-                            Text Message
-                        </a>
-                    </li>
-                    <li>
                         <a href='tel:+61861177649'>
                             <Image src={Phone} alt='' width={50} />
                             Call Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href='sms:+61412346781'>
+                            <Image src={SMS} alt='' width={50} />
+                            Text Message
                         </a>
                     </li>
                     <li>
@@ -158,10 +158,10 @@ const UserAside = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href='/'>
+                        <div href='/' onClick={logOutHandler}>
                             <Image src={LogoutIcon} alt='' width={50} />
                             Log out
-                        </Link>
+                        </div>
                     </li>
                 </ul>
                 {Messages()}

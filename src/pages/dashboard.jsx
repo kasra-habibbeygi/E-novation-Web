@@ -68,19 +68,28 @@ const Dashboard = () => {
                             text='Job Progress'
                             borderType='rounded'
                             extraClass={tabsStatus === 'Job Progress' ? 'active' : ''}
-                            clickHandler={() => tabsStatusHanler('Job Progress')}
+                            clickHandler={() => {
+                                tabsStatusHanler('Job Progress');
+                                setJobsProgressTabsStatus('Job Progress');
+                            }}
                         />
                         <Button
                             text='Photo Album'
                             borderType='rounded'
                             extraClass={tabsStatus === 'Photo Album' ? 'active' : ''}
-                            clickHandler={() => tabsStatusHanler('Photo Album')}
+                            clickHandler={() => {
+                                tabsStatusHanler('Photo Album');
+                                setJobsProgressTabsStatus('Photo Album');
+                            }}
                         />
                         <Button
                             text='Documents'
                             borderType='rounded'
                             extraClass={tabsStatus === 'Documents' ? 'active' : ''}
-                            clickHandler={() => tabsStatusHanler('Documents')}
+                            clickHandler={() => {
+                                tabsStatusHanler('Documents');
+                                setJobsProgressTabsStatus('Documents');
+                            }}
                         />
                     </div>
                 </div>

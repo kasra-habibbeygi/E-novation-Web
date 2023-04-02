@@ -5,7 +5,8 @@ export const LayoutField = styled.main({
         width: 'calc(100% - 470px)',
         marginLeft: '70px',
         marginTop: '70px',
-        padding: '30px'
+        padding: '30px',
+        minHeight: 'calc(100vh - 70px)'
     },
 
     '@media (max-width: 1200px)': {

@@ -252,11 +252,12 @@ export const UserAsideField = styled.aside(props => ({
                 width: '20px'
             },
 
-            a: {
+            'a , div': {
                 display: 'flex',
                 alignItems: 'center',
                 color: 'white',
-                gap: '10px'
+                gap: '10px',
+                cursor: 'pointer'
             }
         },
 

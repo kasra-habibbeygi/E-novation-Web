@@ -5,11 +5,14 @@ import LayoutProvider from '../components/layout/layout.provider';
 // Assets
 import { MainField } from '../assets/styles/about-us';
 
+// Component
+import HeaderTemp from '../components/template/header';
+
 const AboutUs = () => {
     return (
         <LayoutProvider>
             <MainField>
-                <h3>About us</h3>
+                <HeaderTemp title='About Us' />
                 <p>Backed by the founders' extensive experience in Design and Manufacturing.</p>
                 <p>
                     We complement your needs with our extensive experience in Designing and Manufacturing Parts, Equipment, Tools and

@@ -4,6 +4,7 @@ export const MainField = styled.div({
     display: 'flex',
     gap: '20px',
     flexWrap: 'wrap',
+    padding: '0 40px 20px 0',
 
     svg: {
         width: '23%'
@@ -47,6 +48,67 @@ export const MainField = styled.div({
         },
         svg: {
             width: '31%'
+        }
+    },
+
+    '@media (max-width: 900px)': {
+        margin: '0 40px 20px 0',
+        padding :'0',
+        paddingRight : '10px',
+        overflow: 'auto',
+        height: 'calc(100vh - 200px)',
+
+        '&::-webkit-scrollbar': {
+            width: '5px'
+        },
+
+        '&::-webkit-scrollbar-track': {
+            background: 'transparent'
+        },
+
+        '&::-webkit-scrollbar-thumb': {
+            background: 'rgb(232 232 232)',
+            borderRadius: '50px'
+        },
+
+        div: {
+            width: '23%',
+            borderRadius: '6px',
+            backgroundColor: '#dadada',
+            textAlign: 'left',
+            padding: '15px',
+            flexDirection: 'column',
+            height: 'unset',
+
+            h3: {
+                fontWeight: 'normal',
+                marginBottom: '8px',
+                paddingBottom: '5px',
+                fontSize: '1rem',
+                borderBottom: '1px solid black',
+                color: 'black',
+                width: '100%'
+            },
+
+            p: {
+                fontSize: '0.9rem',
+                overflow: 'auto',
+                color: 'black',
+                width: '100%'
+            },
+
+            a: {
+                width: '100%',
+                display: 'block'
+            },
+
+            button: {
+                margin: '0 auto',
+                width: 'max-content',
+                fontSize: '0.9rem',
+                padding: '5px 25px',
+                marginTop: '20px'
+            }
         }
     },
 
