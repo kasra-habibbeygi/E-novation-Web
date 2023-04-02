@@ -80,6 +80,18 @@ export const MainField = styled.div(props => ({
         }
     },
 
+    '@media (max-width: 900px)': {
+        padding: '0 40px 20px 0',
+
+        ul: {
+            li: {
+                '&.active': {
+                    transform: 'scale(1.025)'
+                }
+            }
+        }
+    },
+
     '@media (max-width: 500px)': {
         p: {
             fontSize: '0.9rem'

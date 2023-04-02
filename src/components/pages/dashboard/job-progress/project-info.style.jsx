@@ -46,7 +46,9 @@ export const MainField = styled.section({
         borderRadius: '0 8px 8px 8px'
     },
 
-    '@media (max-width: 500px)': {
+    '@media (max-width: 900px)': {
+        padding: '0 40px 20px 0',
+
         ul: {
             li: {
                 flexWrap: 'wrap',

@@ -26,7 +26,7 @@ export const HeaderField = styled.header(props => ({
         },
 
         h3: {
-            fontSize: '1rem',
+            fontSize: '1rem !important',
             backgroundColor: props.theme.colors.primary,
             color: 'white',
             fontWeight: 'normal',

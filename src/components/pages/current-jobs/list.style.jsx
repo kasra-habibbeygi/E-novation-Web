@@ -48,6 +48,7 @@ export const MainField = styled.div({
             boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
             padding: '10px',
             margin: '0 20px',
+            cursor: 'pointer',
 
             h3: {
                 marginBottom: '0',

@@ -4,14 +4,14 @@ export const ButtonField = styled.button(props => ({
     position: 'fixed',
     bottom: '0px',
     width: '100%',
-    display: 'flex',
+    display: 'none',
     justifyContent: 'center',
     left: '0',
     backgroundColor: 'white',
     paddingBottom: '10px',
     cursor: 'unset',
 
-    a: {
+    'a , div': {
         display: 'flex',
         flexDirection: 'column',
         gap: '2px',
@@ -28,5 +28,9 @@ export const ButtonField = styled.button(props => ({
             width: '15px',
             height: 'auto'
         }
+    },
+
+    '@media (max-width: 900px)': {
+        display: 'flex'
     }
 }));

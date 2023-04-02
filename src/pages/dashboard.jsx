@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 // Component
 import LayoutProvider from '../components/layout/layout.provider';
@@ -8,21 +9,34 @@ import ProjectInfo from '../components/pages/dashboard/job-progress/project-info
 import PhotoAlbum from '../components/pages/dashboard/photo-album';
 import Docuemnt from '../components/pages/dashboard/document';
 import Button from '../components/form-group/button';
+import HeaderTemp from '../components/template/header';
+import RedirectButton from '../components/template/redirect-button';
+import MobileMessages from '../components/pages/dashboard/messages';
+
+// Hooks
+import useWindowDimensions from '../hooks/get-window-dimensions';
 
 // Assets
 import { DashboardMainField } from '../assets/styles/main/index';
+import Document from '../assets/images/icons/document.svg';
+import Setting from '../assets/images/icons/settings.svg';
+import Info from '../assets/images/icons/info.svg';
+import Undo from '@/src/assets/images/icons/undo.svg';
 
 // API
 import { GetSpecificJobsMessages } from '../api-request/jobs/messages';
 
 const Dashboard = () => {
     const router = useRouter();
-    const [tabsStatus, setTabsStatus] = useState('jobsProgress');
+    const { width } = useWindowDimensions();
+    const [domLoaded, setDomLoaded] = useState(false);
+    const [tabsStatus, setTabsStatus] = useState('Job Progress');
     const [jobsInfo, setJobsInfo] = useState({});
     const [isLoaded, setIsloaded] = useState(true);
-    const [jobsProgresstabsStatus, setJobsProgressTabsStatus] = useState(0);
+    const [jobsProgresstabsStatus, setJobsProgressTabsStatus] = useState('Job Progress');
 
     useEffect(() => {
+        setDomLoaded(true);
         if (router.query.jobId) {
             GetSpecificJobsMessages(router.query.jobId)
                 .then(res => {
@@ -37,26 +51,30 @@ const Dashboard = () => {
         setTabsStatus(status);
     };
 
+    const returnHanler = () => {
+        setJobsProgressTabsStatus('Job Progress');
+    };
+
     return (
         <LayoutProvider>
-            <DashboardMainField>
-                <header>
+            <DashboardMainField buttonStatus={tabsStatus}>
+                <div className='header'>
                     <div className='left_field'>
-                        <h3>Current Project</h3>
+                        <HeaderTemp title={tabsStatus} />
                         <small>{jobsInfo.name}</small>
                     </div>
                     <div className='right_field'>
                         <Button
                             text='Job Progress'
                             borderType='rounded'
-                            extraClass={tabsStatus === 'jobsProgress' ? 'active' : ''}
-                            clickHandler={() => tabsStatusHanler('jobsProgress')}
+                            extraClass={tabsStatus === 'Job Progress' ? 'active' : ''}
+                            clickHandler={() => tabsStatusHanler('Job Progress')}
                         />
                         <Button
                             text='Photo Album'
                             borderType='rounded'
-                            extraClass={tabsStatus === 'photoAlbum' ? 'active' : ''}
-                            clickHandler={() => tabsStatusHanler('photoAlbum')}
+                            extraClass={tabsStatus === 'Photo Album' ? 'active' : ''}
+                            clickHandler={() => tabsStatusHanler('Photo Album')}
                         />
                         <Button
                             text='Documents'
@@ -65,31 +83,55 @@ const Dashboard = () => {
                             clickHandler={() => tabsStatusHanler('Documents')}
                         />
                     </div>
-                </header>
-                {tabsStatus === 'photoAlbum' && <PhotoAlbum />}
-                {tabsStatus === 'jobsProgress' && (
-                    <div className='content_field'>
-                        <div className='tabs'>
-                            <Button
-                                text='Job Progress'
-                                extraClass={jobsProgresstabsStatus === 0 ? 'active' : ''}
-                                clickHandler={() => setJobsProgressTabsStatus(0)}
-                            />
-                            <Button
-                                text='Job Info'
-                                extraClass={jobsProgresstabsStatus === 1 ? 'active' : ''}
-                                clickHandler={() => setJobsProgressTabsStatus(1)}
-                            />
+                </div>
+                {tabsStatus === 'Photo Album' && <PhotoAlbum />}
+                {tabsStatus === 'Job Progress' && (
+                    <>
+                        <div className='content_field'>
+                            <div className='tabs'>
+                                <Button
+                                    text='Job Progress'
+                                    extraClass={jobsProgresstabsStatus === 'Job Progress' ? 'active' : ''}
+                                    clickHandler={() => setJobsProgressTabsStatus('Job Progress')}
+                                />
+                                <Button
+                                    text='Job Info'
+                                    extraClass={jobsProgresstabsStatus === 'Job Info' ? 'active' : ''}
+                                    clickHandler={() => setJobsProgressTabsStatus('Job Info')}
+                                />
+                            </div>
+                            <span className={`project_list ${jobsProgresstabsStatus === 'Job Progress' ? 'active' : ''}`}>
+                                <ProjectList jobsInfo={jobsInfo} isLoaded={isLoaded} />
+                            </span>
+                            <span className={`project_list ${jobsProgresstabsStatus === 'Job Info' ? 'active' : ''}`}>
+                                <ProjectInfo jobsInfo={jobsInfo} isLoaded={isLoaded} />
+                            </span>
+                            {jobsProgresstabsStatus === 'Message Board' && <MobileMessages />}
                         </div>
-                        <span className={`project_list ${jobsProgresstabsStatus === 0 ? 'active' : ''}`}>
-                            <ProjectList jobsInfo={jobsInfo} isLoaded={isLoaded} />
-                        </span>
-                        <span className={`project_list ${jobsProgresstabsStatus === 1 ? 'active' : ''}`}>
-                            <ProjectInfo jobsInfo={jobsInfo} isLoaded={isLoaded} />
-                        </span>
-                    </div>
+                        {jobsProgresstabsStatus === 'Job Progress' && (
+                            <div className='mobile_menu'>
+                                <button onClick={() => setJobsProgressTabsStatus('Job Info')}>
+                                    <Image src={Info} alt='' />
+                                    <p>Jobs Info</p>
+                                </button>
+                                <span></span>
+                                <button onClick={() => setJobsProgressTabsStatus('Message Board')}>
+                                    <Image src={Document} alt='' />
+                                    <p>Message Board</p>
+                                </button>
+                                <span></span>
+                                <button onClick={() => router.push('/current-jobs')}>
+                                    <Image src={Setting} alt='' />
+                                    <p>Company Jobs</p>
+                                </button>
+                            </div>
+                        )}
+                    </>
                 )}
                 {tabsStatus === 'Documents' && <Docuemnt />}
+                {domLoaded && width < 900 && (jobsProgresstabsStatus === 'Message Board' || jobsProgresstabsStatus === 'Job Info') && (
+                    <RedirectButton text='Current Jobs' icon={Undo} returnHandler={returnHanler} />
+                )}
             </DashboardMainField>
         </LayoutProvider>
     );
