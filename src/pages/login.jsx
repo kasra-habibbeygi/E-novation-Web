@@ -25,6 +25,10 @@ const Login = () => {
             <div className='right_field'>
                 <Image src={Logo} alt='Main Logo' width={400} />
                 <AuthForm />
+                <div className='remember_field'>
+                    <input type='checkbox' id='remember_field' />
+                    <label htmlFor='remember_field'>Remember Me</label>
+                </div>
             </div>
             <div className='login_footer'>
                 <p>Client Application</p>
