@@ -24,7 +24,8 @@ export const AuthField = styled.div(props => ({
             height: '36px',
             bottom: '33px',
             right: '16px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            display: 'block !important'
         }
     },
 
