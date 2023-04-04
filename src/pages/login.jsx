@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { AuthField, ImageField } from '../assets/styles/auth/auth.style';
 import AuthImg from '../assets/images/authSidePicture.jpg';
 import Logo from '../assets/images/logo.png';
+import WhiteLogo from '../assets/images/white-logo.png';
 
 // Component
 import AuthForm from '../components/pages/auth/form';
@@ -24,6 +25,7 @@ const Login = () => {
             <ImageField image={AuthImg.src}></ImageField>
             <div className='right_field'>
                 <Image src={Logo} alt='Main Logo' width={400} />
+                <Image src={WhiteLogo} alt='Main Logo' width={400} className='mobile_logo' />
                 <AuthForm />
                 <div className='remember_field'>
                     <input type='checkbox' id='remember_field' />

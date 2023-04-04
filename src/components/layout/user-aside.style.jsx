@@ -171,7 +171,7 @@ export const UserAsideField = styled.aside(props => ({
     },
 
     '@media (max-width: 900px)': {
-        padding: '30px 20px',
+        padding: '30px 15px',
         width: '300px',
 
         '& .avatar': {
@@ -201,7 +201,7 @@ export const UserAsideField = styled.aside(props => ({
             paddingBottom: '0',
 
             '& .content_field': {
-                marginTop: '15px',
+                marginTop: '25px',
                 backgroundColor: 'transparent',
                 borderRadius: '8px',
                 display: 'block',
@@ -225,7 +225,7 @@ export const UserAsideField = styled.aside(props => ({
                     display: 'flex',
                     alignItems: 'center',
                     background: '#ffffff6b',
-                    marginBottom: '5px',
+                    marginBottom: '3px',
                     padding: '5px 10px',
                     borderRadius: '8px'
                 }
@@ -233,7 +233,7 @@ export const UserAsideField = styled.aside(props => ({
         },
 
         '& .seprator': {
-            width: '87%',
+            width: '93%',
             display: 'block',
             margin: '15px auto',
             height: '1px',
@@ -287,19 +287,19 @@ export const UserAsideField = styled.aside(props => ({
 
         '& .nav_list': {
             img: {
-                width: '18px',
+                width: '20px',
                 height: 'auto'
             },
 
-            a: {
-                padding: '10px 0',
+            'div , a': {
+                padding: '13px 0',
                 fontSize: '0.9rem'
             }
         },
 
         '& .user_info_field': {
             '& .content_field': {
-                marginTop: '5px',
+                marginTop: '25px',
 
                 p: {
                     fontSize: '0.9rem'
@@ -313,8 +313,10 @@ export const UserAsideField = styled.aside(props => ({
 
         '& .copy_right': {
             small: {
-                fontSize: '0.7rem',
-                padding: '0 10px'
+                fontSize: '0.6rem',
+                padding: '0 10px',
+                marginTop: '-3px',
+                display: 'block'
             },
 
             p: {

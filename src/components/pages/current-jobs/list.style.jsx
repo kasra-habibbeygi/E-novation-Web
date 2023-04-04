@@ -16,6 +16,11 @@ export const MainField = styled.div({
         backgroundColor: 'white',
         textAlign: 'center',
         padding: '50px 15px',
+        transition: 'all linear 0.1',
+
+        '&:active': {
+            opacity: '0.5'
+        },
 
         h3: {
             fontWeight: 'normal',

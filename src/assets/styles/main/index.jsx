@@ -17,7 +17,13 @@ export const DashboardMainField = styled.section(props => ({
         },
 
         small: {
-            fontSize: '0.9rem'
+            fontSize: '0.9rem',
+            display: 'flex',
+            alignItems: 'center',
+
+            svg: {
+                width: '100px'
+            }
         },
 
         '& .right_field': {
@@ -126,7 +132,6 @@ export const DashboardMainField = styled.section(props => ({
                 color: props.theme.colors.secondary,
                 border: `1px solid ${props.theme.colors.secondary}`,
                 padding: '5px 20px',
-                display: 'block',
                 width: '100%',
                 borderRadius: '10px',
                 backgroundColor: 'white',
@@ -142,12 +147,13 @@ export const DashboardMainField = styled.section(props => ({
             '& .right_field': {
                 position: 'absolute',
                 zIndex: '10',
-                top: '360px',
-                right: '-143px',
+                top: '49%',
+                right: '-170px',
                 transform: 'rotate(90deg) translate(-8%)',
                 background: '#F2CA30',
-                height: '50px',
+                height: '125px',
                 borderRadius: '22px',
+                paddingTop: '52px',
 
                 button: {
                     color: 'white',
@@ -163,11 +169,18 @@ export const DashboardMainField = styled.section(props => ({
                         color: 'black'
                     },
 
-                    '&:last-of-type': {
-                        borderRadius: '0 0 22px 0'
+                    '&:nth-child(2)': {
+                        borderRadius: '0 0 0 22px',
+                        order: '1'
                     },
+
+                    '&:last-of-type': {
+                        borderRadius: '0 0 22px 0',
+                        order: '3'
+                    },
+
                     '&:first-of-type': {
-                        borderRadius: '0 0 0 22px'
+                        order: '2'
                     }
                 },
 
@@ -175,10 +188,10 @@ export const DashboardMainField = styled.section(props => ({
                     content: '""',
                     position: 'absolute',
                     left: '-22px',
-                    top: '-78px',
+                    top: '-3px',
                     width: '70px',
                     height: '130px',
-                    background: props.buttonStatus === 'Job Progress' ? '#F2F5FA' : props.theme.colors.secondary,
+                    background: props.buttonStatus === 'Photo Album' ? '#F2F5FA' : props.theme.colors.secondary,
                     borderRadius: ' 80px 80px 0 0',
                     transform: 'rotate(155deg)',
                     zIndex: '-1'
@@ -187,7 +200,7 @@ export const DashboardMainField = styled.section(props => ({
                     content: '""',
                     position: 'absolute',
                     right: '-22px',
-                    top: '-78px',
+                    top: '-3px',
                     width: '70px',
                     height: '130px',
                     background: props.buttonStatus === 'Documents' ? '#F2F5FA' : props.theme.colors.secondary,

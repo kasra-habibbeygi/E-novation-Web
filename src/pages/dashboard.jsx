@@ -12,6 +12,7 @@ import Button from '../components/form-group/button';
 import HeaderTemp from '../components/template/header';
 import RedirectButton from '../components/template/redirect-button';
 import MobileMessages from '../components/pages/dashboard/messages';
+import CardSkeleton from '../components/skeleton/card';
 
 // Hooks
 import useWindowDimensions from '../hooks/get-window-dimensions';
@@ -61,7 +62,7 @@ const Dashboard = () => {
                 <div className='header'>
                     <div className='left_field'>
                         <HeaderTemp title={tabsStatus} />
-                        <small>{jobsInfo.name}</small>
+                        <small>{jobsInfo.name ? jobsInfo.name : <CardSkeleton height='20' />}</small>
                     </div>
                     <div className='right_field'>
                         <Button

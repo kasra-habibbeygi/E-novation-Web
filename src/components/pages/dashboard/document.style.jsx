@@ -4,7 +4,6 @@ export const MainField = styled.div({
     display: 'flex',
     gap: '20px',
     flexWrap: 'wrap',
-    padding: '0 40px 20px 0',
 
     svg: {
         width: '23%'
@@ -52,7 +51,7 @@ export const MainField = styled.div({
     },
 
     '@media (max-width: 900px)': {
-        margin: '0 40px 20px 0',
+        margin: '0 50px 20px 0',
         padding: '0',
         paddingRight: '10px',
         overflow: 'auto',

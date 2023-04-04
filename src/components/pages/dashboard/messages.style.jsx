@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const MainField = styled.div({
     width: '100%',
-    padding: '0 40px 20px 0',
+    padding: '0 50px 20px 0',
     display: 'none',
 
     svg: {

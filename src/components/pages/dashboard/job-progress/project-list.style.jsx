@@ -81,7 +81,7 @@ export const MainField = styled.div(props => ({
     },
 
     '@media (max-width: 900px)': {
-        padding: '0 40px 20px 0',
+        padding: '0 50px 20px 0',
 
         ul: {
             li: {

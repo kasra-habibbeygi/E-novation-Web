@@ -4,6 +4,10 @@ export const AuthField = styled.div(props => ({
     display: 'flex',
     height: '100vh',
 
+    '& .mobile_logo': {
+        display: 'block'
+    },
+
     '& .right_field': {
         width: '600px',
         display: 'flex',
@@ -63,7 +67,11 @@ export const AuthField = styled.div(props => ({
         '& .right_field': {
             width: '100%',
             height: '100%',
-            backgroundColor: props.theme.colors.primary
+            backgroundColor: props.theme.colors.primary,
+
+            img: {
+                display: 'none'
+            }
         },
 
         label: {
@@ -76,6 +84,10 @@ export const AuthField = styled.div(props => ({
 
         '& .mb-0': {
             marginBottom: '10px'
+        },
+
+        '& .mobile_logo': {
+            display: 'block !important'
         }
     },
 
