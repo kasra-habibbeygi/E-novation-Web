@@ -88,7 +88,7 @@ export const MainField = styled.div(props => ({
             gap: '5px',
 
             li: {
-                padding: '4px 10px',
+                padding: '6px 10px',
 
                 '&.active': {
                     transform: 'scale(1.025)'
@@ -103,7 +103,7 @@ export const MainField = styled.div(props => ({
 
     '@media (max-width: 500px)': {
         p: {
-            fontSize: '0.8rem'
+            fontSize: '0.85rem'
         },
 
         img: {

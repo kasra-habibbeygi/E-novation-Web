@@ -47,6 +47,28 @@ export const MainField = styled.div({
     },
 
     '@media (max-width: 900px)': {
-        display: 'block'
+        display: 'block',
+        padding: '0',
+
+        ul: {
+            margin: '0 30px 20px 0',
+            padding: '0',
+            paddingRight: '10px',
+            overflow: 'auto',
+            height: 'calc(93vh - 210px)',
+
+            '&::-webkit-scrollbar': {
+                width: '5px'
+            },
+
+            '&::-webkit-scrollbar-track': {
+                background: 'transparent'
+            },
+
+            '&::-webkit-scrollbar-thumb': {
+                background: 'rgb(232 232 232)',
+                borderRadius: '50px'
+            }
+        }
     }
 });

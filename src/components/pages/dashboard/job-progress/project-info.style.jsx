@@ -54,24 +54,14 @@ export const MainField = styled.section({
 
             li: {
                 flexWrap: 'wrap',
-                padding: '5px 20px',
+                padding: '8px 20px',
 
-                p: {
-                    fontSize: '0.9rem'
-                }
-            }
-        }
-    },
-
-    '@media (max-width: 400px)': {
-        ul: {
-            li: {
                 p: {
                     fontSize: '0.9rem'
                 },
-
                 span: {
-                    fontSize: '0.8rem'
+                    fontSize: '0.9rem',
+                    fontWeight: 'bold'
                 }
             }
         }

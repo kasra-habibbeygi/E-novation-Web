@@ -18,8 +18,8 @@ export const MainField = styled.div({
 
     '@media (max-width: 900px)': {
         overflow: 'auto',
-        height: 'calc(100vh - 200px)',
-        margin: '0 40px 20px 0',
+        height: 'calc(100vh - 210px)',
+        margin: '0 30px 20px 0',
         padding: '0',
         paddingRight: '10px',
 
