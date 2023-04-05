@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -27,6 +28,9 @@ import Undo from '@/src/assets/images/icons/undo.svg';
 // API
 import { GetSpecificJobsMessages } from '../api-request/jobs/messages';
 
+// Utils
+import { Time } from '@/src/utils/constasts';
+
 const Dashboard = () => {
     const router = useRouter();
     const { width } = useWindowDimensions();
@@ -45,6 +49,18 @@ const Dashboard = () => {
                     setIsloaded(false);
                 })
                 .catch(() => {});
+
+            const apiRecall = setInterval(() => {
+                GetSpecificJobsMessages(router.query.jobId)
+                    .then(res => {
+                        setJobsInfo(res);
+                    })
+                    .catch(() => {});
+            }, Time.API_RECALL_TIME);
+
+            return () => {
+                clearInterval(apiRecall);
+            };
         }
     }, [router.query.jobId]);
 

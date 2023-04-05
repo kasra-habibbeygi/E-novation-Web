@@ -14,6 +14,9 @@ import CardSkeleton from '../../skeleton/card';
 // API
 import { GetJobAblum } from '@/src/api-request/jobs/album';
 
+// Utils
+import { Time } from '@/src/utils/constasts';
+
 const PhotoAlbum = () => {
     const router = useRouter();
     const [infoModalStatus, setInfoModalStatus] = useState(false);
@@ -28,6 +31,18 @@ const PhotoAlbum = () => {
                 setIsloaded(false);
             })
             .catch(() => {});
+
+        const apiRecall = setInterval(() => {
+            GetJobAblum(router.query.jobId)
+                .then(res => {
+                    setAlbumList(res);
+                })
+                .catch(() => {});
+        }, Time.API_RECALL_TIME);
+
+        return () => {
+            clearInterval(apiRecall);
+        };
     }, [router.query.jobId]);
 
     const infoModalStatusHandler = item => {

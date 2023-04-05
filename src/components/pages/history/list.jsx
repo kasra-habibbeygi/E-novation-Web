@@ -16,6 +16,9 @@ import RedirectButton from '../../template/redirect-button';
 // Hooks
 import useWindowDimensions from '@/src/hooks/get-window-dimensions';
 
+// Utils
+import { Time } from '@/src/utils/constasts';
+
 const HistoryList = () => {
     const userId = useSelector(state => state.UserInfo.info.id);
     const [historyList, setHistoryList] = useState([]);
@@ -25,12 +28,25 @@ const HistoryList = () => {
 
     useEffect(() => {
         setDomLoaded(true);
+
         GetHistory(userId)
             .then(res => {
                 setHistoryList(res);
                 setIsloaded(false);
             })
             .catch(() => {});
+
+        const apiRecall = setInterval(() => {
+            GetHistory(userId)
+                .then(res => {
+                    setHistoryList(res);
+                })
+                .catch(() => {});
+        }, Time.API_RECALL_TIME);
+
+        return () => {
+            clearInterval(apiRecall);
+        };
     }, [userId]);
 
     return (

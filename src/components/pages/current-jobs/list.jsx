@@ -19,6 +19,9 @@ import { GetOpenJobs } from '@/src/api-request/jobs/current';
 // Hooks
 import useWindowDimensions from '@/src/hooks/get-window-dimensions';
 
+// Utils
+import { Time } from '@/src/utils/constasts';
+
 const CurrentJobsList = () => {
     const router = useRouter();
     const [openJobsList, setOpenJobsList] = useState([]);
@@ -40,6 +43,19 @@ const CurrentJobsList = () => {
                 setOpenJobsList(res);
             })
             .catch(() => {});
+
+
+        const apiRecall = setInterval(() => {
+            GetOpenJobs()
+                .then(res => {
+                    setOpenJobsList(res);
+                })
+                .catch(() => {});
+        }, Time.API_RECALL_TIME);
+    
+        return () => {
+            clearInterval(apiRecall);
+        };
     }, []);
 
     return (

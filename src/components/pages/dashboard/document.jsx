@@ -15,6 +15,9 @@ import { GetJobDocument } from '@/src/api-request/jobs/document';
 // Hooks
 import useWindowDimensions from '@/src/hooks/get-window-dimensions';
 
+// Utils
+import { Time } from '@/src/utils/constasts';
+
 const Document = () => {
     const router = useRouter();
     const { width } = useWindowDimensions();
@@ -28,6 +31,18 @@ const Document = () => {
                 setIsloaded(false);
             })
             .catch(() => {});
+
+        const apiRecall = setInterval(() => {
+            GetJobDocument(router.query.jobId)
+                .then(res => {
+                    setDocList(res);
+                })
+                .catch(() => {});
+        }, Time.API_RECALL_TIME);
+
+        return () => {
+            clearInterval(apiRecall);
+        };
     }, [router.query.jobId]);
 
     return (

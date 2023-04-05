@@ -63,6 +63,8 @@ export const MainField = styled.ul(props => ({
     },
 
     '@media (max-width: 900px)': {
+        paddingBottom: '80px',
+
         li: {
             flexDirection: 'column',
             boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'

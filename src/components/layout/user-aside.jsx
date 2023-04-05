@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { userAsideStatusHandler } from '@/src/state-manager/reducers/tools';
@@ -28,6 +29,9 @@ import { GetJobsMessages } from '../../api-request/jobs/messages';
 // Hooks
 import useWindowDimensions from '@/src/hooks/get-window-dimensions';
 
+// Utils
+import { Time } from '@/src/utils/constasts';
+
 const UserAside = () => {
     const { width } = useWindowDimensions();
     const [domLoaded, setDomLoaded] = useState(false);
@@ -47,8 +51,19 @@ const UserAside = () => {
                     setMessagesList(res);
                     setIsloaded(false);
                 })
-                .catch(() => {})
-                .finally(() => {});
+                .catch(() => {});
+
+            const apiRecall = setInterval(() => {
+                GetJobsMessages(router.query.jobId)
+                    .then(res => {
+                        setMessagesList(res);
+                    })
+                    .catch(() => {});
+            }, Time.API_RECALL_TIME);
+
+            return () => {
+                clearInterval(apiRecall);
+            };
         }
     }, [router.query.jobId, width]);
 
