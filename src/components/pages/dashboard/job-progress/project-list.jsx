@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 // Component
+import useWindowDimensions from '@/src/hooks/get-window-dimensions';
 import CardSkeleton from '@/src/components/skeleton/card';
 
 // Assets
@@ -143,18 +144,19 @@ const jobsInfoArr = [
 ];
 
 const ProjectList = ({ jobsInfo, isLoaded }) => {
+    const { width } = useWindowDimensions();
     const cardProvider = status => {
         return isLoaded ? (
             <>
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
-                <CardSkeleton height='50' background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
+                <CardSkeleton height={width > 600 ? '50' : '40'} background='#F2F2F2' foregroundColor='white' />
             </>
         ) : (
             jobsInfoArr.map((item, index) => (

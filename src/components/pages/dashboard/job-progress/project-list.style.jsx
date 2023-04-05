@@ -81,20 +81,29 @@ export const MainField = styled.div(props => ({
     },
 
     '@media (max-width: 900px)': {
-        padding: '0 50px 20px 0',
+        padding: '0 40px 20px 0',
+        gap: '12px',
 
         ul: {
+            gap: '5px',
+
             li: {
+                padding: '4px 10px',
+
                 '&.active': {
                     transform: 'scale(1.025)'
                 }
             }
+        },
+
+        '& .progress_bar': {
+            width: '10px'
         }
     },
 
     '@media (max-width: 500px)': {
         p: {
-            fontSize: '0.9rem'
+            fontSize: '0.8rem'
         },
 
         img: {

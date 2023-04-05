@@ -148,12 +148,12 @@ export const DashboardMainField = styled.section(props => ({
                 position: 'absolute',
                 zIndex: '10',
                 top: '49%',
-                right: '-170px',
+                right: '-185px',
                 transform: 'rotate(90deg) translate(-8%)',
                 background: '#F2CA30',
                 height: '125px',
                 borderRadius: '22px',
-                paddingTop: '52px',
+                paddingTop: '71px',
 
                 button: {
                     color: 'white',

@@ -33,14 +33,16 @@ export const AuthField = styled.div(props => ({
             color: 'white',
             width: '100%',
             textAlign: 'center',
-            fontWeight: 'bold'
+            fontSize: '0.8rem',
+            marginBottom: '5px'
         },
 
         small: {
             color: 'white',
             width: '100%',
             textAlign: 'center',
-            display: 'block'
+            display: 'block',
+            fontSize: '0.7rem'
         }
     },
 
