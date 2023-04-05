@@ -30,6 +30,7 @@
     "react-hot-toast": "^2.4.0",
     "react-redux": "^8.0.5",
     "react-spinners": "^0.13.8",
+    "sharp": "^0.32.0",
     "validator": "^13.9.0",
     "yarn": "^1.22.19"
   },
