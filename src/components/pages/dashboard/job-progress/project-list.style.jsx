@@ -102,13 +102,50 @@ export const MainField = styled.div(props => ({
     },
 
     '@media (max-width: 500px)': {
+        height: 'calc(100vh - 240px)',
+
         p: {
             fontSize: '0.85rem'
         },
 
         img: {
-            width: '25px !important',
-            marginRight: '10px !important'
+            width: '4vh !important',
+            marginRight: '10px !important',
+            minWidth: '30px'
+        },
+
+        ul: {
+            gap: '5px',
+
+            li: {
+                padding: '6px 10px',
+                height: '100%',
+
+                '&.active': {
+                    transform: 'scale(1.025)'
+                }
+            }
+        }
+    },
+
+    '@media (max-height: 700px)': {
+        p: {
+            fontSize: '0.8rem'
+        },
+
+        img: {
+            width: '4vh !important',
+            marginRight: '10px !important',
+            minWidth: '30px'
+        },
+
+        ul: {
+            gap: '3px',
+
+            li: {
+                padding: '3px 10px',
+                height: '100%'
+            }
         }
     }
 }));
