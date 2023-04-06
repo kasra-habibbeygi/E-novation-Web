@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import { Toaster } from 'react-hot-toast';
 import { Provider } from 'react-redux';
@@ -12,6 +13,9 @@ import ThemeConfig from '../configs/theme';
 // Assets
 import '../assets/styles/global/general.css';
 
+// Component
+import Loader from '../components/layout/loader';
+
 NProgress.configure({
     minimum: 0.3,
     easing: 'ease',
@@ -24,6 +28,14 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
+    const [loader, setLoader] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false);
+        }, 1000);
+    }, []);
+
     return (
         <Provider store={Store}>
             <ThemeProvider theme={ThemeConfig}>
@@ -33,6 +45,7 @@ function MyApp({ Component, pageProps }) {
                         zIndex: 9999
                     }}
                 />
+                {loader && <Loader />}
                 <Component {...pageProps} />
             </ThemeProvider>
         </Provider>

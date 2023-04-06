@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Assets
 import { ButtonField } from './button.style';
 
-const Input = ({ text, borderType = 'normal', color = 'primary', loading = false, extraClass, disabled = false, clickHandler }) => {
+const Button = ({ text, borderType = 'normal', color = 'primary', loading = false, extraClass, disabled = false, clickHandler }) => {
     return (
         <ButtonField borderType={borderType} color={color} className={`${disabled ? 'disabled' : ''} ${extraClass}`} onClick={clickHandler}>
             {loading ? <PulseLoader color='#FFFFFF' loading={loading} size={10} /> : text}
@@ -12,7 +12,7 @@ const Input = ({ text, borderType = 'normal', color = 'primary', loading = false
     );
 };
 
-Input.propTypes = {
+Button.propTypes = {
     text: PropTypes.string,
     borderType: PropTypes.oneOf(['normal', 'sharp', 'rounded']),
     color: PropTypes.oneOf(['primary', 'danger', 'warning']),
@@ -21,4 +21,4 @@ Input.propTypes = {
     clickHandler: PropTypes.func
 };
 
-export default Input;
+export default Button;
