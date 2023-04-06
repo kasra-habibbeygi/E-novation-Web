@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
                         zIndex: 9999
                     }}
                 />
-                {loader && <Loader />}
+                {/* {loader && <Loader />} */}
                 <Component {...pageProps} />
             </ThemeProvider>
         </Provider>
