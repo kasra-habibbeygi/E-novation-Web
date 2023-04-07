@@ -16,8 +16,7 @@ export const LoaderField = styled.nav(props => ({
     p: {
         display: 'flex',
         alignItems: 'center',
-        fontWeight: 'bold',
-        fontSize: '1.3rem',
+        fontSize: '1.1rem',
         color: 'white',
         position: 'relative',
         left: '7px',

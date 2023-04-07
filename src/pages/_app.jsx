@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import { Toaster } from 'react-hot-toast';
 import { Provider } from 'react-redux';
+import Head from 'next/head';
 import Store from '@/src/state-manager/store';
 import NProgress from 'nprogress';
 import Router from 'next/router';
@@ -46,6 +47,9 @@ function MyApp({ Component, pageProps }) {
                     }}
                 />
                 {loader && <Loader />}
+                <Head>
+                    <title>E-NOVATION | Engineering Company</title>
+                </Head>
                 <Component {...pageProps} />
             </ThemeProvider>
         </Provider>
