@@ -1,3 +1,5 @@
+/* eslint-disable vars-on-top */
+/* eslint-disable no-inner-declarations */
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import { Toaster } from 'react-hot-toast';
@@ -16,6 +18,7 @@ import '../assets/styles/global/general.css';
 
 // Component
 import Loader from '../components/layout/loader';
+import AppInstallModal from '../components/layout/app-install-button';
 
 NProgress.configure({
     minimum: 0.3,
@@ -27,11 +30,40 @@ NProgress.configure({
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
+var displayMode = '';
+if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
+    var deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', e => {
+        deferredPrompt = e;
+        const installApp = document.getElementById('installApp');
+        installApp.addEventListener('click', async () => {
+            if (deferredPrompt !== null) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    deferredPrompt = null;
+                }
+            }
+        });
+    });
+
+    window.addEventListener('DOMContentLoaded', async () => {
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            displayMode = 'fullscreen';
+        }
+
+        const relatedApps = await navigator.getInstalledRelatedApps();
+
+        console.log(relatedApps);
+    });
+}
 
 function MyApp({ Component, pageProps }) {
     const [loader, setLoader] = useState(true);
+    const [domLoadStatus, setDomLoadStatus] = useState(false);
 
     useEffect(() => {
+        setDomLoadStatus(true);
         setTimeout(() => {
             setLoader(false);
         }, 1000);
@@ -47,6 +79,7 @@ function MyApp({ Component, pageProps }) {
                     }}
                 />
                 {loader && <Loader />}
+                {domLoadStatus && localStorage.getItem('userInfo') && displayMode !== 'fullscreen' && <AppInstallModal />}
                 <Head>
                     <title>E-NOVATION | Engineering Company</title>
                 </Head>

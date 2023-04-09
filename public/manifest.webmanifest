@@ -7,8 +7,11 @@
     "name": "E-novation",
     "orientation": "portrait",
     "short_name": "E-novation",
-    "icons": [
-        {
+    "related_applications": [{
+        "platform": "webapp",
+        "url": "https://example.com/manifest.json"
+    }],
+    "icons": [{
             "src": "/icon-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
@@ -29,5 +32,17 @@
             "type": "image/png"
         }
     ],
-    "splash_pages": null
+    "description": "This is a long text that can describe what your PWA does to the user",
+    "categories": ["games", "education"],
+    "screenshots": [{
+            "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758?1",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758?2",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
 }

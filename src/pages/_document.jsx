@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html lang='en'>
             <Head>
-                <link rel='manifest' href='/manifest.json' />
+                <link rel='manifest' href='/manifest.webmanifest' />
                 <link rel='apple-touch-icon' href='/icon.png'></link>
             </Head>
             <body>
