@@ -30,23 +30,9 @@ NProgress.configure({
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
+
 var displayMode = '';
 if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
-    var deferredPrompt = null;
-    window.addEventListener('beforeinstallprompt', e => {
-        deferredPrompt = e;
-        const installApp = document.getElementById('installApp');
-        installApp.addEventListener('click', async () => {
-            if (deferredPrompt !== null) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') {
-                    deferredPrompt = null;
-                }
-            }
-        });
-    });
-
     window.addEventListener('DOMContentLoaded', async () => {
         if (window.matchMedia('(display-mode: standalone)').matches) {
             displayMode = 'fullscreen';
@@ -60,10 +46,10 @@ if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
 
 function MyApp({ Component, pageProps }) {
     const [loader, setLoader] = useState(true);
-    const [domLoadStatus, setDomLoadStatus] = useState(false);
+    const [domLoaded, setDomloaded] = useState(false);
 
     useEffect(() => {
-        setDomLoadStatus(true);
+        setDomloaded(true);
         setTimeout(() => {
             setLoader(false);
         }, 1000);
@@ -79,7 +65,7 @@ function MyApp({ Component, pageProps }) {
                     }}
                 />
                 {loader && <Loader />}
-                {domLoadStatus && localStorage.getItem('userInfo') && displayMode !== 'fullscreen' && <AppInstallModal />}
+                {domLoaded && displayMode !== 'fullscreen' && !localStorage.getItem('PWA-status') && <AppInstallModal />}
                 <Head>
                     <title>E-NOVATION | Engineering Company</title>
                 </Head>

@@ -11,9 +11,10 @@
         "platform": "webapp",
         "url": "https://example.com/manifest.json"
     }],
-    "icons": [{
-            "src": "/icon-192x192.png",
-            "sizes": "192x192",
+    "icons": [
+        {
+            "src": "/icon-128x128.png",
+            "sizes": "128x128",
             "type": "image/png"
         },
         {

@@ -47,7 +47,7 @@ export const ModalField = styled.nav(props => ({
             gap: '10px',
 
             img: {
-                width: '60px',
+                width: '40px',
                 height: 'auto'
             }
         }

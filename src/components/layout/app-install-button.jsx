@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 // Assets
@@ -11,6 +11,31 @@ import Button from '../form-group/button';
 
 const AppInstallModal = () => {
     const [infoModalStatus, setInfoModalStatus] = useState(true);
+    const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+    useEffect(() => {
+        const handleBeforeInstallPrompt = event => {
+            event.preventDefault();
+            setDeferredPrompt(event);
+        };
+
+        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        return () => {
+            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        };
+    }, []);
+
+    const handleInstallClick = () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then(choiceResult => {
+                if (choiceResult.outcome === 'accepted') {
+                    localStorage.setItem('PWA-status', true);
+                }
+            });
+            setDeferredPrompt(null);
+        }
+    };
 
     return (
         <ModalField status={infoModalStatus}>
@@ -26,7 +51,7 @@ const AppInstallModal = () => {
                 </p>
                 <p>Apple users must use safari browser to install the app.</p>
                 <div className='button_group'>
-                    <Button text='Install App' extraId='installApp' />
+                    <Button text='Install App' clickHandler={handleInstallClick} />
                     <Button text='Now Now' extraClass='close_button' />
                 </div>
             </div>
