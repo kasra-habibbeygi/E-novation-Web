@@ -52,7 +52,7 @@ const AppInstallModal = () => {
                 <p>Apple users must use safari browser to install the app.</p>
                 <div className='button_group'>
                     <Button text='Install App' clickHandler={handleInstallClick} />
-                    <Button text='Now Now' extraClass='close_button' />
+                    <Button text='Not Now' extraClass='close_button' clickHandler={() => setInfoModalStatus(false)} />
                 </div>
             </div>
         </ModalField>
