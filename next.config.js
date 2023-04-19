@@ -11,8 +11,8 @@ module.exports = withPWA({
     images: {
         remotePatterns: [
             {
-                protocol: 'http',
-                hostname: '154.26.136.182',
+                protocol: 'https',
+                hostname: 'enovationengineering.com.au/panel',
                 pathname: '/media/**'
             }
         ]
