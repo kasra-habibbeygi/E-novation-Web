@@ -52,8 +52,6 @@ function MyApp({ Component, pageProps }) {
         }, 1000);
     }, []);
 
-    console.log(domLoaded, displayMode, domLoaded && localStorage.getItem('PWA-status'));
-
     return (
         <Provider store={Store}>
             <ThemeProvider theme={ThemeConfig}>
