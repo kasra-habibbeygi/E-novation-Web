@@ -37,7 +37,8 @@ if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
         if (window.matchMedia('(display-mode: standalone)').matches) {
             displayMode = 'fullscreen';
         }
-        await navigator.getInstalledRelatedApps();
+        const relatedApps = await navigator.getInstalledRelatedApps();
+        console.log(relatedApps);
     });
 }
 
