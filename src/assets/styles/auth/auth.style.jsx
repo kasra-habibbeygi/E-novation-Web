@@ -51,20 +51,17 @@ export const AuthField = styled.div(props => ({
         width: '90%',
         color: 'white',
         gap: '10px',
-        display: 'none',
+        display: 'flex',
 
         label: {
-            display: 'block'
+            display: 'block',
+            color: 'black'
         }
     },
 
     '@media (max-width: 900px)': {
         flexDirection: 'column',
         width: '100%',
-
-        '& .remember_field': {
-            display: 'flex'
-        },
 
         '& .right_field': {
             width: '100%',

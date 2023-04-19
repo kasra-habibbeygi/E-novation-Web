@@ -21,7 +21,7 @@ export const MainField = styled.div({
         },
 
         img: {
-            width: '80px'
+            width: '65px'
         }
     }
 });

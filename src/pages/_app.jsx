@@ -37,10 +37,7 @@ if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
         if (window.matchMedia('(display-mode: standalone)').matches) {
             displayMode = 'fullscreen';
         }
-
-        const relatedApps = await navigator.getInstalledRelatedApps();
-
-        console.log(relatedApps);
+        await navigator.getInstalledRelatedApps();
     });
 }
 
@@ -54,6 +51,8 @@ function MyApp({ Component, pageProps }) {
             setLoader(false);
         }, 1000);
     }, []);
+
+    console.log(domLoaded, displayMode, localStorage.getItem('PWA-status'));
 
     return (
         <Provider store={Store}>

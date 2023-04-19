@@ -34,7 +34,7 @@ const Aside = () => {
                 <li className='web_view'>
                     <Link href='/contact-us'>
                         <Image src={Phone} alt='' width={50} />
-                        Call Us
+                        Contact Us
                     </Link>
                 </li>
                 <li className='mobile_view'>
