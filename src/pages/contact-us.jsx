@@ -4,6 +4,7 @@ import { MainField } from '../assets/styles/contact-us';
 import Email from '../assets/images/icons/mail.svg';
 import Phone from '../assets/images/icons/phone-call.svg';
 import Location from '../assets/images/icons/location.svg';
+import WebSite from '../assets/images/icons/globalization.svg';
 
 // Component
 import LayoutProvider from '../components/layout/layout.provider';
@@ -23,6 +24,12 @@ const ContactUs = () => {
                 <div>
                     <Image src={Phone} alt='' width={100} />
                     <p>+61 8 6117 6749</p>
+                </div>
+                <div>
+                    <Image src={WebSite} alt='' width={100} />
+                    <a href='http://www.e-novation.com.au/' target='_blank'>
+                        www.e-novation.com.au
+                    </a>
                 </div>
             </MainField>
         </LayoutProvider>

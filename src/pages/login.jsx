@@ -10,7 +10,6 @@ import WhiteLogo from '../assets/images/white-logo.png';
 
 // Component
 import AuthForm from '../components/pages/auth/form';
-import { GetOpenJobs } from '../api-request/jobs/current';
 
 const Login = () => {
     const router = useRouter();
@@ -19,7 +18,6 @@ const Login = () => {
         if (typeof window !== 'undefined' && localStorage.getItem('userInfo') !== null) {
             router.push('/current-jobs');
         }
-        GetOpenJobs();
     }, [router]);
 
     return (

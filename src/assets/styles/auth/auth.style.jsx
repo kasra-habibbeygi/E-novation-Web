@@ -49,7 +49,6 @@ export const AuthField = styled.div(props => ({
     '& .remember_field': {
         alignItems: 'center',
         width: '90%',
-        color: 'white',
         gap: '10px',
         display: 'flex',
 
@@ -87,6 +86,12 @@ export const AuthField = styled.div(props => ({
 
         '& .mobile_logo': {
             display: 'block !important'
+        },
+
+        '& .remember_field': {
+            label: {
+                color: 'white'
+            }
         }
     },
 

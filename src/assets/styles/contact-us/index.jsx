@@ -14,14 +14,14 @@ export const MainField = styled.div({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        gap: '30px',
+        gap: '10px',
 
         p: {
-            fontSize: '1.2rem'
+            fontSize: '1.1rem'
         },
 
         img: {
-            width: '65px'
+            width: '50px'
         }
     }
 });

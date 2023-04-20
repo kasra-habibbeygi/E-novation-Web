@@ -4,7 +4,7 @@ export const LoaderField = styled.nav(props => ({
     position: 'fixed',
     top: '0',
     left: '0',
-    backgroundColor: props.theme.colors.secondary,
+    backgroundColor: props.theme.colors.primary,
     width: '100%',
     height: '100vh',
     zIndex: '20',

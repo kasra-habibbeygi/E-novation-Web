@@ -18,7 +18,6 @@ import '../assets/styles/global/general.css';
 
 // Component
 import Loader from '../components/layout/loader';
-import AppInstallModal from '../components/layout/app-install-button';
 
 NProgress.configure({
     minimum: 0.3,
@@ -31,23 +30,10 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-var displayMode = '';
-if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
-    window.addEventListener('DOMContentLoaded', async () => {
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            displayMode = 'fullscreen';
-        }
-        const relatedApps = await navigator.getInstalledRelatedApps();
-        console.log(relatedApps);
-    });
-}
-
 function MyApp({ Component, pageProps }) {
     const [loader, setLoader] = useState(true);
-    const [domLoaded, setDomloaded] = useState(false);
 
     useEffect(() => {
-        setDomloaded(true);
         setTimeout(() => {
             setLoader(false);
         }, 1000);
@@ -63,7 +49,6 @@ function MyApp({ Component, pageProps }) {
                     }}
                 />
                 {loader && <Loader />}
-                {domLoaded && displayMode !== 'fullscreen' && !localStorage.getItem('PWA-status') && <AppInstallModal />}
                 <Head>
                     <title>E-NOVATION | Engineering Company</title>
                 </Head>

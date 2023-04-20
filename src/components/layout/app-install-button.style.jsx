@@ -71,5 +71,31 @@ export const ModalField = styled.nav(props => ({
             border: '2px solid #f1f1f1',
             color: '#515678'
         }
+    },
+
+    '@media (max-width: 900px)': {
+        '& .content': {
+            h3: {
+                fontSize: '1.3rem',
+                marginBottom: '15px',
+                color: '#313132',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                justifyContent: 'center',
+
+                img: {
+                    width: '30px',
+                    height: 'auto'
+                }
+            }
+        }
+    },
+
+    '@media (max-width: 500px)': {
+        '& .content': {
+            margin: 'auto 15px',
+            padding: '15px'
+        }
     }
 }));
