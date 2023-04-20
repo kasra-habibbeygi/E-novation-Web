@@ -73,6 +73,15 @@ export const ModalField = styled.nav(props => ({
         }
     },
 
+    '& .form_group': {
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+        fontSize: '1.1rem',
+        color: '#686868',
+        marginTop: '20px'
+    },
+
     '@media (max-width: 900px)': {
         '& .content': {
             h3: {

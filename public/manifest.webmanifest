@@ -2,17 +2,22 @@
     "theme_color": "#fff",
     "background_color": "#fff",
     "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
+    "start_url": "/?utm_source=homescreen",
     "name": "E-novation",
     "orientation": "portrait",
     "short_name": "E-novation",
     "related_applications": [{
-        "platform": "webapp",
-        "url": "https://example.com/manifest.json"
-    }],
-    "icons": [
+            "platform": "itunes",
+            "url": "https://itunes.apple.com/us/app/starbucks/id331177714?mt=8",
+            "id": "331177714"
+        },
         {
+            "platform": "play",
+            "url": "https://play.google.com/store/apps/details?id=com.starbucks.mobilecard&hl=en",
+            "id": "com.starbucks.mobilecard"
+        }
+    ],
+    "icons": [{
             "src": "/icon-128x128.png",
             "sizes": "128x128",
             "type": "image/png"
@@ -31,19 +36,6 @@
             "src": "/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
-        }
-    ],
-    "description": "This is a long text that can describe what your PWA does to the user",
-    "categories": ["games", "education"],
-    "screenshots": [{
-            "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758?1",
-            "type": "image/png",
-            "sizes": "512x512"
-        },
-        {
-            "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758?2",
-            "type": "image/png",
-            "sizes": "512x512"
         }
     ]
 }

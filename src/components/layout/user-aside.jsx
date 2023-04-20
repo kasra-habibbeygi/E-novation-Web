@@ -121,7 +121,7 @@ const UserAside = () => {
             <Layout status={asideStatus} onClick={() => display(userAsideStatusHandler(false))}></Layout>
             <UserAsideField
                 status={asideStatus}
-                avatarImage={domLoaded && (userInfo.img ? `${process.env.URL}/media/${userInfo.img}` : AvatarImg)}
+                avatarImage={domLoaded && (userInfo.img ? `${process.env.URL.replace('/panel', '')}/media/${userInfo.img}` : AvatarImg)}
             >
                 <div className='avatar'></div>
                 <h3>

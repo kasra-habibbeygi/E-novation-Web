@@ -37,6 +37,14 @@ const AppInstallModal = () => {
         }
     };
 
+    const confirmhandler = e => {
+        if (e.target.checked) {
+            localStorage.setItem('PWA-status', true);
+        } else {
+            localStorage.removeItem('PWA-status');
+        }
+    };
+
     return (
         <ModalField status={infoModalStatus}>
             <div className='layout' onClick={() => setInfoModalStatus(false)}></div>
@@ -50,6 +58,10 @@ const AppInstallModal = () => {
                     the camera, location, mobile sensors or any other user's personal information.
                 </p>
                 <p>Apple users must use safari browser to install the app.</p>
+                <div className='form_group'>
+                    <input type='checkbox' id='confirm' onChange={e => confirmhandler(e)} />
+                    <label htmlFor='confirm'>Do you want to stop showing this window?</label>
+                </div>
                 <div className='button_group'>
                     <Button text='Install App' clickHandler={handleInstallClick} />
                     <Button text='Not Now' extraClass='close_button' clickHandler={() => setInfoModalStatus(false)} />
