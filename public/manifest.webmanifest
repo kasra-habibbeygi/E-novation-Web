@@ -37,5 +37,6 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "description" : "This mobile app utilises PWA technology with a strong focus on user information security, and does not have access to the camera, location, mobile sensors or any other user's personal information."
 }

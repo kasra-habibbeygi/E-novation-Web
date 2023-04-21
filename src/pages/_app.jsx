@@ -19,6 +19,7 @@ import '../assets/styles/global/general.css';
 // Component
 import Loader from '../components/layout/loader';
 import AppInstallModal from '../components/layout/app-install-button';
+import LandscapeLock from '../components/layout/landscape-lock';
 
 NProgress.configure({
     minimum: 0.3,
@@ -41,8 +42,6 @@ if (typeof window !== 'undefined' && localStorage.getItem('userInfo')) {
         console.log(relatedApps);
     });
 }
-
-console.log(displayMode);
 
 function MyApp({ Component, pageProps }) {
     const [loader, setLoader] = useState(true);
@@ -69,6 +68,7 @@ function MyApp({ Component, pageProps }) {
                 <Head>
                     <title>E-NOVATION | Engineering Company</title>
                 </Head>
+                <LandscapeLock />
                 <Component {...pageProps} />
             </ThemeProvider>
         </Provider>

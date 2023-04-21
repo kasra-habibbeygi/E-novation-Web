@@ -60,7 +60,7 @@ const AppInstallModal = () => {
                 <p>Apple users must use safari browser to install the app.</p>
                 <div className='form_group'>
                     <input type='checkbox' id='confirm' onChange={e => confirmhandler(e)} />
-                    <label htmlFor='confirm'>Do you want to stop showing this window?</label>
+                    <label htmlFor='confirm'>Do not show me again</label>
                 </div>
                 <div className='button_group'>
                     <Button text='Install App' clickHandler={handleInstallClick} />

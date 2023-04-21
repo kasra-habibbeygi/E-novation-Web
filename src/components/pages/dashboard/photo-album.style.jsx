@@ -105,6 +105,18 @@ export const ModalField = styled.div(props => ({
     overflow: 'auto',
     padding: '30px 0',
 
+    '& .close_btn': {
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        cursor: 'pointer',
+
+        img: {
+            width: '20px',
+            height: 'auto'
+        }
+    },
+
     '& .layout': {
         width: '100%',
         minHeight: '100vh',
@@ -122,15 +134,18 @@ export const ModalField = styled.div(props => ({
         background: 'rgb(255 255 255 / 13%)',
         backdropFilter: 'blur( 7px )',
         borderRadius: '10px',
-        padding: '30px',
+        padding: '70px 30px',
         margin: 'auto'
     },
 
-    img: {
+    '& .headr_image': {
         width: '100%',
-        height: 'auto',
+        height: '400px',
         borderRadius: '10px',
-        marginBottom: '30px'
+        marginBottom: '30px',
+        backgroundImage: `url(${props.image})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
     },
 
     p: {

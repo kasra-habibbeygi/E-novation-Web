@@ -77,7 +77,8 @@ export const MainField = styled.div({
             textAlign: 'left',
             padding: '15px',
             flexDirection: 'column',
-            height: 'unset',
+            justifyContent: 'flex-start',
+            height: 'max-content',
 
             h3: {
                 fontWeight: 'normal',

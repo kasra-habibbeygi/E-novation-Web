@@ -14,14 +14,24 @@ export const MainField = styled.div({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
+        height: '140px',
         gap: '10px',
 
         p: {
-            fontSize: '1.1rem'
+            fontSize: '1rem'
         },
 
         img: {
-            width: '50px'
+            width: '40px',
+            height: 'auto'
+        }
+    },
+
+    '@media (max-width: 900px)': {
+        flexWrap: 'wrap',
+
+        div: {
+            boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
         }
     }
 });

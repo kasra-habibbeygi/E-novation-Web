@@ -5,6 +5,7 @@ import Image from 'next/image';
 // Assets
 import { MainField, Card, ModalField } from './photo-album.style';
 import Share from '@/src/assets/images/icons/share.svg';
+import Close from '@/src/assets/images/icons/close.svg';
 
 // Component
 import Button from '../../form-group/button';
@@ -72,13 +73,13 @@ const PhotoAlbum = () => {
                     <EmptyField />
                 )}
             </MainField>
-            <ModalField status={infoModalStatus}>
+            <ModalField status={infoModalStatus} image={specificInfo?.img}>
                 <div className='layout' onClick={() => setInfoModalStatus(false)}></div>
                 <div className='content'>
-                    <Image src={specificInfo?.img} alt='' width={1500} height={1000} />
-                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
-                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
-                    <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
+                    <span className='close_btn' onClick={() => setInfoModalStatus(false)}>
+                        <Image src={Close} alt='' />
+                    </span>
+                    <div className='headr_image'></div>
                     <p>{specificInfo?.description ?? 'No description has been written for this photo!'}</p>
                     <Button text='Close' clickHandler={() => setInfoModalStatus(false)} color='danger' />
                 </div>
