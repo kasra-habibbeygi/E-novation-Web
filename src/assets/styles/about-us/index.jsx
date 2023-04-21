@@ -8,7 +8,7 @@ export const MainField = styled.div({
 
     p: {
         marginTop: '10px',
-        fontSize: '1.1rem',
+        fontSize: '1rem',
         lineHeight: '30px'
     }
 });
