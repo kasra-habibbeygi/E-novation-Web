@@ -38,5 +38,17 @@
             "type": "image/png"
         }
     ],
-    "description" : "This mobile app utilises PWA technology with a strong focus on user information security, and does not have access to the camera, location, mobile sensors or any other user's personal information."
+    "description" : "This mobile app utilises PWA technology with a strong focus on user information security, and does not have access to the camera, location, mobile sensors or any other user's personal information.",
+    "categories": ["management", "engineering"],
+    "screenshots": [{
+            "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758?1",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "https://cdn.glitch.me/248b0d2d-8ab9-4407-a073-136440ab3556/icon.png?v=1640879741758?2",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
 }
