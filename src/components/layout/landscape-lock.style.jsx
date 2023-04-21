@@ -8,7 +8,6 @@ export const MainField = styled.aside(props => ({
     left: '0',
     backgroundColor: props.theme.colors.primary,
     zIndex: '100',
-    display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
