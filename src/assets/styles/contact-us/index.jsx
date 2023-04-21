@@ -14,7 +14,7 @@ export const MainField = styled.div({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
-        height: '140px',
+        height: '200px',
         gap: '10px',
 
         p: {
@@ -23,7 +23,8 @@ export const MainField = styled.div({
 
         img: {
             width: '40px',
-            height: 'auto'
+            height: 'auto',
+            filter: 'invert(82%) sepia(85%) saturate(1923%) hue-rotate(330deg) brightness(99%) contrast(92%)'
         }
     },
 
