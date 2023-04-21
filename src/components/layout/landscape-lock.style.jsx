@@ -15,7 +15,7 @@ export const MainField = styled.aside(props => ({
     display: ' none',
 
     img: {
-        width: '300px',
+        width: '220px',
         height: 'auto'
     },
 

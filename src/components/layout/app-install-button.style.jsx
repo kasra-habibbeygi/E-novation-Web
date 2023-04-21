@@ -45,6 +45,7 @@ export const ModalField = styled.nav(props => ({
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
+            justifyContent: 'center',
 
             img: {
                 width: '40px',
@@ -77,7 +78,7 @@ export const ModalField = styled.nav(props => ({
         display: 'flex',
         alignItems: 'center',
         gap: '10px',
-        fontSize: '1.1rem',
+        fontSize: '1rem',
         color: '#686868',
         marginTop: '20px'
     },
